@@ -1,6 +1,6 @@
 {
   "name": "hais-ui-001",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个自己搭建的UI框架",
   "main": "dist/index.js",
   "scripts": {
