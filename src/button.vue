@@ -3,7 +3,7 @@
     <u-icon class="icon" v-if="icon && !loading" :name="icon"></u-icon>
     <u-icon class="icon loading" name="loading" v-if="loading"></u-icon>
     <div class="content">
-      <slot></slot>
+      <slot/>
     </div>
   </button>
 </template>
