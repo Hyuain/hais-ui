@@ -46,7 +46,6 @@ try {
     })
     vm.$mount()
     let useElement = vm.$el.querySelector('use')
-    console.log(vm.$el)
     expect(useElement.getAttribute('xlink:href')).to.eq('#icon-loading')
     vm.$el.remove()
     vm.$destroy()
