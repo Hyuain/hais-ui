@@ -5,6 +5,7 @@
 </template>
 <script>
 export default {
+  name: 'HaiButtonGroup',
   mounted() {
     for (let node of this.$el.children) {
       let nodeName = node.nodeName.toLowerCase();
@@ -17,7 +18,7 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .u-button-group {
   display: inline-flex;
   vertical-align: middle;

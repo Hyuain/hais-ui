@@ -7,10 +7,11 @@
 <script>
   import './svg.js'
   export default {
+    name: 'HaiIcon',
     props: ['name']
   };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .u-icon {
     width: 1em;
     height: 1em;
