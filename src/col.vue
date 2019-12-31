@@ -1,14 +1,24 @@
 <template>
-  <div class="col" :class="[`col-${span}`]">
-    <slot></slot>
+  <div class="col" :class="[`col-${span}`, offset && `offset-${offset}`]" :style="{paddingLeft: gutter/2+'px', paddingRight: gutter/2+'px'}">
+    <div style="border: 1px solid red; height: 100px;">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
 <script>
   export default {
     name: "HaiCol",
+    data() {
+      return {
+        gutter: 0
+      }
+    },
     props: {
       span: {
+        type: [Number, String]
+      },
+      offset: {
         type: [Number, String]
       }
     }
@@ -17,14 +27,15 @@
 
 <style lang="scss" scoped>
   .col {
-    height: 100px;
-    background: #b3cefb;
+    /*background: #b3cefb;*/
     width: 50%;
-    border: 1px solid #666666;
-    $class-prefix: col-;
+    /*border: 1px solid #666666;*/
     @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n} {
-        width: ($n / 24) *100%;
+      &.col-#{$n} {
+        width: ($n / 24) * 100%;
+      }
+      &.offset-#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
     }
   }
