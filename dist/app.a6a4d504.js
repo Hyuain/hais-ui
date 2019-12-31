@@ -12992,12 +12992,32 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
 //
 //
 //
 //
 //
 //
+var validator = function validator(value) {
+  var keys = Object.keys(value);
+  var valid = true;
+  keys.forEach(function (key) {
+    if (!['span', 'offset'].includes(key)) {
+      valid = false;
+    }
+  });
+  return valid;
+};
+
 var _default = {
   name: "HaiCol",
   data: function data() {
@@ -13008,8 +13028,12 @@ var _default = {
   computed: {
     colClass: function colClass() {
       var span = this.span,
-          offset = this.offset;
-      return [span && "col-".concat(span), offset && "offset-".concat(offset)];
+          offset = this.offset,
+          pad = this.pad,
+          narrowPc = this.narrowPc,
+          pc = this.pc,
+          widePc = this.widePc;
+      return [span && "col-".concat(span), offset && "offset-".concat(offset)].concat(_toConsumableArray(pad ? ["col-pad-".concat(pad.span), pad.offset ? "offset-pad-".concat(pad.offset) : []] : []), _toConsumableArray(narrowPc ? ["col-narrow-pc-".concat(narrowPc.span), narrowPc.offset ? "offset-narrow-pc-".concat(narrowPc.offset) : []] : []), _toConsumableArray(pc ? ["col-pc-".concat(pc.span), pc.offset ? "offset-pc-".concat(pc.offset) : []] : []), _toConsumableArray(widePc ? ["col-wide-pc-".concat(widePc.span), widePc.offset ? "offset-wide-pc-".concat(widePc.offset) : []] : []));
     },
     colStyle: function colStyle() {
       return {
@@ -13024,6 +13048,22 @@ var _default = {
     },
     offset: {
       type: [Number, String]
+    },
+    pad: {
+      type: Object,
+      validator: validator
+    },
+    narrowPc: {
+      type: Object,
+      validator: validator
+    },
+    pc: {
+      type: Object,
+      validator: validator
+    },
+    widePc: {
+      type: Object,
+      validator: validator
     }
   }
 };
@@ -13152,7 +13192,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "6470" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "9130" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

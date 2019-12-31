@@ -57,36 +57,38 @@
 
 <div id="app">
   <div class="box">
+
+
     <u-row class="topbar">
-      <u-col class="demoBox" span="9">
-        <u-row align="left">
-          <u-col>1</u-col>
-          <u-col>2</u-col>
-          <u-col>3</u-col>
-          <u-col>4</u-col>
-        </u-row>
-      </u-col>
-      <u-col class="demoBox" span="15">
-        <u-row align="right">
-          <u-col>1</u-col>
-          <u-col>2</u-col>
-          <u-col>3</u-col>
-          <u-col>4</u-col>
-          <u-col>5</u-col>
-          <u-col>6</u-col>
-          <u-col>7</u-col>
-        </u-row>
-      </u-col>
+      <u-col class="demoBox" span="24"
+             :pad="{span:8}"
+             :wide-pc="{span:1}"
+      ></u-col>
+      <u-col class="demoBox" span="24" offset="0"
+             :pad="{span:15, offset:1}"
+             :wide-pc="{span:19, offset:4}"
+      ></u-col>
     </u-row>
-    <u-row class="logo-and-search-and-qrcode">
-      <u-col class="demoBox" span="4">
-        <div class="logo-wrapper">
-          <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">
-        </div>
-      </u-col>
-      <u-col class="demoBox" span="14"></u-col>
-      <u-col class="demoBox" span="6"></u-col>
+    <u-row class="topbar">
+      <u-col class="demoBox" span="2"
+      ></u-col>
+      <u-col class="demoBox" span="22"
+      ></u-col>
     </u-row>
+
+
+
+
+
+<!--    <u-row class="logo-and-search-and-qrcode">-->
+<!--      <u-col class="demoBox" span="4">-->
+<!--        <div class="logo-wrapper">-->
+<!--          <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">-->
+<!--        </div>-->
+<!--      </u-col>-->
+<!--      <u-col class="demoBox" span="14"></u-col>-->
+<!--      <u-col class="demoBox" span="6"></u-col>-->
+<!--    </u-row>-->
   </div>
 
 <!--  <div class="box">-->
