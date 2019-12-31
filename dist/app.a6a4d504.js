@@ -13025,23 +13025,6 @@ var _default = {
       gutter: 0
     };
   },
-  computed: {
-    colClass: function colClass() {
-      var span = this.span,
-          offset = this.offset,
-          pad = this.pad,
-          narrowPc = this.narrowPc,
-          pc = this.pc,
-          widePc = this.widePc;
-      return [span && "col-".concat(span), offset && "offset-".concat(offset)].concat(_toConsumableArray(pad ? ["col-pad-".concat(pad.span), pad.offset ? "offset-pad-".concat(pad.offset) : []] : []), _toConsumableArray(narrowPc ? ["col-narrow-pc-".concat(narrowPc.span), narrowPc.offset ? "offset-narrow-pc-".concat(narrowPc.offset) : []] : []), _toConsumableArray(pc ? ["col-pc-".concat(pc.span), pc.offset ? "offset-pc-".concat(pc.offset) : []] : []), _toConsumableArray(widePc ? ["col-wide-pc-".concat(widePc.span), widePc.offset ? "offset-wide-pc-".concat(widePc.offset) : []] : []));
-    },
-    colStyle: function colStyle() {
-      return {
-        paddingLeft: this.gutter / 2 + 'px',
-        paddingRight: this.gutter / 2 + 'px'
-      };
-    }
-  },
   props: {
     span: {
       type: [Number, String]
@@ -13064,6 +13047,48 @@ var _default = {
     widePc: {
       type: Object,
       validator: validator
+    }
+  },
+  computed: {
+    colClass: function colClass() {
+      var span = this.span,
+          offset = this.offset,
+          pad = this.pad,
+          narrowPc = this.narrowPc,
+          pc = this.pc,
+          widePc = this.widePc;
+      var createClass = this.createClass;
+      return [].concat(_toConsumableArray(createClass({
+        span: span,
+        offset: offset
+      })), _toConsumableArray(createClass(pad, 'pad-')), _toConsumableArray(createClass(narrowPc, 'narrow-pc-')), _toConsumableArray(createClass(pc, 'pc-')), _toConsumableArray(createClass(widePc, 'wide-pc-')));
+    },
+    colStyle: function colStyle() {
+      return {
+        paddingLeft: this.gutter / 2 + 'px',
+        paddingRight: this.gutter / 2 + 'px'
+      };
+    }
+  },
+  methods: {
+    createClass: function createClass(propsObj) {
+      var device = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+      if (!propsObj) {
+        return [];
+      }
+
+      var classArray = [];
+
+      if (propsObj.span) {
+        classArray.push("col-".concat(device).concat(propsObj.span));
+      }
+
+      if (propsObj.offset) {
+        classArray.push("offset-".concat(device).concat(propsObj.offset));
+      }
+
+      return classArray;
     }
   }
 };

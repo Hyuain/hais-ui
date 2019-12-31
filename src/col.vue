@@ -22,16 +22,24 @@
         gutter: 0,
       }
     },
+    props: {
+      span: {type: [Number, String]},
+      offset: {type: [Number, String]},
+      pad: {type: Object, validator},
+      narrowPc: {type: Object, validator},
+      pc: {type: Object, validator},
+      widePc: {type: Object, validator}
+    },
     computed: {
       colClass() {
         let {span, offset, pad, narrowPc, pc, widePc} = this
+        let createClass = this.createClass
         return [
-          span && `col-${span}`,
-          offset && `offset-${offset}`,
-          ...(pad ? [`col-pad-${pad.span}`, (pad.offset ? `offset-pad-${pad.offset}`:[])] : []),
-          ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`, (narrowPc.offset ? `offset-narrow-pc-${narrowPc.offset}`:[])] : []),
-          ...(pc ? [`col-pc-${pc.span}`, (pc.offset ? `offset-pc-${pc.offset}`:[])]:[]),
-          ...(widePc ? [`col-wide-pc-${widePc.span}`, (widePc.offset ? `offset-wide-pc-${widePc.offset}`:[])] : [])
+          ...createClass({span, offset}),
+          ...createClass(pad, 'pad-'),
+          ...createClass(narrowPc, 'narrow-pc-'),
+          ...createClass(pc, 'pc-'),
+          ...createClass(widePc, 'wide-pc-')
         ]
       },
       colStyle() {
@@ -41,13 +49,20 @@
         }
       }
     },
-    props: {
-      span: {type: [Number, String]},
-      offset: {type: [Number, String]},
-      pad: {type: Object, validator},
-      narrowPc: {type: Object, validator},
-      pc: {type: Object, validator},
-      widePc: {type: Object, validator}
+    methods: {
+      createClass(propsObj, device = '') {
+        if (!propsObj) {
+          return []
+        }
+        let classArray = []
+        if (propsObj.span) {
+          classArray.push(`col-${device}${propsObj.span}`)
+        }
+        if (propsObj.offset) {
+          classArray.push(`offset-${device}${propsObj.offset}`)
+        }
+        return classArray
+      }
     }
   }
 </script>
