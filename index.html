@@ -41,7 +41,9 @@
 <body>
 <div id="app">
   <div class="box">
-    <u-input value="啧啧啧"></u-input>
+    <u-input v-model="message"></u-input>
+    <p>{{message}}</p>
+    <button @click="message+=1">+1</button>
     <u-input value="啧啧啧" disabled></u-input>
     <u-input value="啧啧啧" readonly></u-input>
   </div>
