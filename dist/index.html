@@ -37,67 +37,83 @@
 
 <body>
 
+<style>.demoBox{
+    min-height: 70px;
+    border: 1px solid #F1453D;
+  }
+  img{
+    max-width: 100%;
+  }
+  .logo-wrapper{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }</style>
+
 <div id="app">
   <div class="box">
-    <u-row gutter="20">
-      <u-col>1</u-col>
-      <u-col>1</u-col>
+    <u-row class="topbar">
+      <u-col class="demoBox" span="9">
+        <u-row align="left">
+          <u-col>1</u-col>
+          <u-col>2</u-col>
+          <u-col>3</u-col>
+          <u-col>4</u-col>
+        </u-row>
+      </u-col>
+      <u-col class="demoBox" span="15">
+        <u-row align="right">
+          <u-col>1</u-col>
+          <u-col>2</u-col>
+          <u-col>3</u-col>
+          <u-col>4</u-col>
+          <u-col>5</u-col>
+          <u-col>6</u-col>
+          <u-col>7</u-col>
+        </u-row>
+      </u-col>
     </u-row>
-    <u-row>
-      <u-col></u-col>
-      <u-col></u-col>
-      <u-col></u-col>
-    </u-row>
-    <u-row gutter="40">
-      <u-col></u-col>
-      <u-col></u-col>
-      <u-col></u-col>
-      <u-col></u-col>
-    </u-row>
-    <u-row gutter="30">
-      <u-col span="2"></u-col>
-      <u-col offset="2" span="20"></u-col>
-    </u-row>
-    <u-row>
-      <u-col span="4"></u-col>
-      <u-col span="20"></u-col>
-    </u-row>
-    <u-row gutter="40">
-      <u-col span="2"></u-col>
-      <u-col offset="2" span="10"></u-col>
+    <u-row class="logo-and-search-and-qrcode">
+      <u-col class="demoBox" span="4">
+        <div class="logo-wrapper">
+          <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">
+        </div>
+      </u-col>
+      <u-col class="demoBox" span="14"></u-col>
+      <u-col class="demoBox" span="6"></u-col>
     </u-row>
   </div>
 
-  <div class="box">
-    <u-input v-model="message"></u-input>
-    <p>{{message}}</p>
-    <button @click="message+=1">+1</button>
-    <u-input value="啧啧啧" disabled=""></u-input>
-    <u-input value="啧啧啧" readonly=""></u-input>
-  </div>
+<!--  <div class="box">-->
+<!--    <u-input v-model="message"></u-input>-->
+<!--    <p>{{message}}</p>-->
+<!--    <button @click="message+=1">+1</button>-->
+<!--    <u-input value="啧啧啧" disabled></u-input>-->
+<!--    <u-input value="啧啧啧" readonly></u-input>-->
+<!--  </div>-->
 
-  <div class="box">
-    <u-input value="啧" error="姓名不能少于两个字"></u-input>
-  </div>
-  <div class="box">
-    <u-input value="啧" @change="inputChange"></u-input>
-  </div>
-  <div class="box">
-    <u-button :loading="loading1" @click="loading1 = !loading1">
-      按钮
-    </u-button>
-    <u-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
-    </u-button>
-    <u-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-      按钮
-    </u-button>
-    <u-icon name="download"></u-icon>
-    <u-button-group>
-      <u-button icon="left">上一页</u-button>
-      <u-button>上一页</u-button>
-      <u-button icon="right" icon-position="right">下一页</u-button>
-    </u-button-group>
-  </div>
+<!--  <div class="box">-->
+<!--    <u-input value="啧" error="姓名不能少于两个字"></u-input>-->
+<!--  </div>-->
+<!--  <div class="box">-->
+<!--    <u-input value="啧" @change="inputChange"></u-input>-->
+<!--  </div>-->
+<!--  <div class="box">-->
+<!--    <u-button :loading="loading1" @click="loading1 = !loading1">-->
+<!--      按钮-->
+<!--    </u-button>-->
+<!--    <u-button icon="settings" :loading="loading2" @click="loading2 = !loading2">-->
+<!--    </u-button>-->
+<!--    <u-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">-->
+<!--      按钮-->
+<!--    </u-button>-->
+<!--    <u-icon name="download"></u-icon>-->
+<!--    <u-button-group>-->
+<!--      <u-button icon="left">上一页</u-button>-->
+<!--      <u-button>上一页</u-button>-->
+<!--      <u-button icon="right" icon-position="right">下一页</u-button>-->
+<!--    </u-button-group>-->
+<!--  </div>-->
 
 </div>
 
