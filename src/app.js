@@ -48,7 +48,6 @@ new Vue({
       this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
         {
           autoClose: false,
-          autoCloseDelay: 3,
           position,
           closeButton: {
             text: '知道了',
