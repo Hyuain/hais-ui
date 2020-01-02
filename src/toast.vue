@@ -61,6 +61,7 @@
       },
       close() {
         this.$el.remove()
+        this.$emit('beforeClose')
         this.$destroy()
       },
       onClickClose() {
