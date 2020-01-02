@@ -33,9 +33,23 @@ new Vue({
     loading3: false,
     message: 'hi'
   },
+  created() {
+    this.showToast()
+  },
   methods: {
-    showToast(){
-      this.$toast('当前功能不稳定，如果遇到 Bug 请关闭该功能')
+    showToast() {
+      this.$toast('当前功能不稳定，如果遇到 Bug 请关闭该功能',
+        {
+          closeButton: {
+            text: '知道了',
+            callback(toast) {
+              console.log('用户说他知道了')
+              toast.log()
+            },
+          },
+          enableHtml: false
+        }
+      )
     }
   }
 }).$mount('#app')
