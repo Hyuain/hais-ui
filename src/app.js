@@ -34,12 +34,22 @@ new Vue({
     message: 'hi'
   },
   methods: {
-    showToast() {
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
+
+    showToast(position) {
       this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
         {
           autoClose: false,
           autoCloseDelay: 3,
-          position: 'middle',
+          position,
           closeButton: {
             text: '知道了',
             callback(toast) {
