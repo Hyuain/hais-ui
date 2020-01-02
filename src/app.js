@@ -40,6 +40,8 @@ new Vue({
     showToast() {
       this.$toast('当前功能不稳定，如果遇到 Bug 请关闭该功能',
         {
+          autoClose: true,
+          autoCloseDelay: 3,
           closeButton: {
             text: '知道了',
             callback(toast) {

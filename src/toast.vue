@@ -27,6 +27,13 @@
       enableHtml: {
         type: Boolean,
         default: false
+      },
+      position: {
+        type: String,
+        default: 'top',
+        validator(value){
+          return ['top','bottom','middle'].indexOf(value) >= 0
+        }
       }
     },
     mounted() {
