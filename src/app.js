@@ -33,12 +33,9 @@ new Vue({
     loading3: false,
     message: 'hi'
   },
-  created() {
-    this.showToast()
-  },
   methods: {
     showToast() {
-      this.$toast('当前功能不稳定，如果遇到 Bug 请关闭该功能',
+      this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
         {
           autoClose: false,
           autoCloseDelay: 3,
