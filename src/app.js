@@ -10,6 +10,8 @@ import Header from './header'
 import Content from './content'
 import Sider from './sider'
 import Footer from './footer'
+import Toast from './toast'
+import plugin from "./plugin"
 
 Vue.component('u-button', Button)
 Vue.component('u-icon', Icon)
@@ -22,7 +24,7 @@ Vue.component('u-header', Header)
 Vue.component('u-content', Content)
 Vue.component('u-sider', Sider)
 Vue.component('u-footer', Footer)
-
+Vue.use(plugin)
 
 new Vue({
   data: {
@@ -32,8 +34,8 @@ new Vue({
     message: 'hi'
   },
   methods: {
-    inputChange(e){
-      console.log(e)
+    showToast(){
+      this.$toast('当前功能不稳定，如果遇到 Bug 请关闭该功能')
     }
   }
 }).$mount('#app')
