@@ -12,8 +12,11 @@
   export default {
     name: "HaiTabsHead",
     inject: ['eventBus'],
-    created() {
-      this.eventBus.$on('update:selected', (item, vm)=>{
+    mounted() {
+      this.eventBus.$on('update:selected', (item, vm) => {
+        const {width, height, top, left} = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left}px`
       })
     }
   }
@@ -22,7 +25,7 @@
 <style lang="scss" scoped>
   $tab-height: 40px;
   $active-color: blue;
-  .tabs-head{
+  .tabs-head {
     display: flex;
     height: $tab-height;
     justify-content: flex-start;
@@ -30,8 +33,8 @@
     > .line {
       position: absolute;
       bottom: 0;
-      border-bottom: 1px solid blue;
-      width: 100px;
+      border-bottom: 2px solid blue;
+      transition: all .3s;
     }
     > .actions-wrapper {
       margin-left: auto;

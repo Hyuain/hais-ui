@@ -36,7 +36,6 @@
         if(vm.$options.name === 'HaiTabsHead') {
           vm.$children.forEach(child => {
             if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
-              console.log(child.$el)
               this.eventBus.$emit('update:selected', this.selected, child)
             }
           })
