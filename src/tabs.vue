@@ -6,6 +6,7 @@
 
 <script>
   import Vue from 'vue'
+
   export default {
     name: "HaiTabs",
     props: {
@@ -21,19 +22,23 @@
         }
       }
     },
-    data(){
+    data() {
       return {
         eventBus: new Vue()
       }
     },
-    provide(){
+    provide() {
       return {
         eventBus: this.eventBus
       }
     },
     mounted() {
+      if (this.$children.length === 0) {
+        console && console.warn &&
+        console.warn(`<u-tabs> 的子组件应该是 <u-tabs-head> 和 <u-tabs-nav>，但是你没有写子组件`)
+      }
       this.$children.forEach(vm => {
-        if(vm.$options.name === 'HaiTabsHead') {
+        if (vm.$options.name === 'HaiTabsHead') {
           vm.$children.forEach(child => {
             if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
               this.eventBus.$emit('update:selected', this.selected, child)

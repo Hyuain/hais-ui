@@ -13,7 +13,6 @@ describe('Row', () => {
     expect(Col).to.exist
   })
   it('接收 gutter 属性.', (done) => {
-    // 不加 done 就认为是同步的
     Vue.component('u-row', Row)
     Vue.component('u-col', Col)
     const div = document.createElement('div')
