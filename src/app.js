@@ -16,6 +16,7 @@ import TabsHead from './tabs-head'
 import TabsBody from './tabs-body'
 import TabsItem from './tabs-item'
 import TabsPane from './tabs-pane'
+import Popover from './popover'
 
 
 Vue.component('u-button', Button)
@@ -34,6 +35,7 @@ Vue.component('u-tabs-head', TabsHead)
 Vue.component('u-tabs-body', TabsBody)
 Vue.component('u-tabs-item', TabsItem)
 Vue.component('u-tabs-pane', TabsPane)
+Vue.component('u-popover', Popover)
 Vue.use(plugin)
 
 
