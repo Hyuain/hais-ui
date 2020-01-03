@@ -32,7 +32,16 @@
       }
     },
     mounted() {
-      this.eventBus.$emit('update:selected', this.selected)
+      this.$children.forEach(vm => {
+        if(vm.$options.name === 'HaiTabsHead') {
+          vm.$children.forEach(child => {
+            if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
+              console.log(child.$el)
+              this.eventBus.$emit('update:selected', this.selected, child)
+            }
+          })
+        }
+      })
     }
   }
 </script>
