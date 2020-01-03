@@ -32,20 +32,28 @@
         eventBus: this.eventBus
       }
     },
-    mounted() {
-      if (this.$children.length === 0) {
-        console && console.warn &&
-        console.warn(`<u-tabs> 的子组件应该是 <u-tabs-head> 和 <u-tabs-nav>，但是你没有写子组件`)
-      }
-      this.$children.forEach(vm => {
-        if (vm.$options.name === 'HaiTabsHead') {
-          vm.$children.forEach(child => {
-            if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
-              this.eventBus.$emit('update:selected', this.selected, child)
-            }
-          })
+    methods:{
+      checkChildren(){
+        if (this.$children.length === 0) {
+          console && console.warn &&
+          console.warn(`<u-tabs> 的子组件应该是 <u-tabs-head> 和 <u-tabs-nav>，但是你没有写子组件`)
         }
-      })
+      },
+      selectTab(){
+        this.$children.forEach(vm => {
+          if (vm.$options.name === 'HaiTabsHead') {
+            vm.$children.forEach(child => {
+              if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
+                this.eventBus.$emit('update:selected', this.selected, child)
+              }
+            })
+          }
+        })
+      }
+    },
+    mounted() {
+      this.checkChildren()
+      this.selectTab()
     }
   }
 </script>

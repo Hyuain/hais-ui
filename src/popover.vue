@@ -1,9 +1,9 @@
 <template>
-  <div class="popover" @click="onClick" ref="popover">
+  <div class="popover" ref="popover">
     <div ref="contentWrapper" class="content-wrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper">
+    <span ref="triggerWrapper" @click="onClickButton">
       <slot></slot>
     </span>
   </div>
@@ -16,6 +16,26 @@
       return {visible: false}
     },
     methods: {
+      onClickButton(event) {
+        if (this.$refs.triggerWrapper.contains(event.target)) {
+          if (this.visible === true) {
+            this.close()
+          } else {
+            this.open()
+          }
+        }
+      },
+      close(){
+        this.visible = false
+        document.removeEventListener('click', this.onClickDocument)
+      },
+      open() {
+        this.visible = true
+        setTimeout(() => {
+          this.positioningContent()
+          document.addEventListener('click', this.onClickDocument)
+        })
+      },
       positioningContent() {
         document.body.appendChild(this.$refs.contentWrapper)
         let {top, left} = this.$refs.triggerWrapper.getBoundingClientRect()
@@ -30,30 +50,7 @@
         if (needClose) {
           this.close()
         }
-      },
-      close(){
-        this.visible = false
-        document.removeEventListener('click', this.onClickDocument)
-      },
-      open() {
-        this.visible = true
-        setTimeout(() => {
-          this.positioningContent()
-          document.addEventListener('click', this.onClickDocument)
-        })
-      },
-      onClick(event) {
-        if (this.$refs.triggerWrapper.contains(event.target)) {
-          if (this.visible === true) {
-            this.close()
-          } else {
-            this.open()
-          }
-        }
       }
-    },
-    mounted() {
-
     }
   }
 </script>
