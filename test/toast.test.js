@@ -30,7 +30,7 @@ describe('Toast', () => {
       }, 1200)
     })
 
-    it('接受 closeButton', () => {
+    it('接受 closeButton', (done) => {
       const Constructor = Vue.extend(Toast)
       const callback = sinon.fake()
       const vm = new Constructor({
@@ -48,6 +48,7 @@ describe('Toast', () => {
         expect(callback).to.have.been.called
         vm.$el.remove()
         vm.$destroy()
+        done()
       })
     })
 

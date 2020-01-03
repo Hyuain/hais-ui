@@ -10,8 +10,13 @@ import Header from './header'
 import Content from './content'
 import Sider from './sider'
 import Footer from './footer'
-import Toast from './toast'
 import plugin from "./plugin"
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsBody from './tabs-body'
+import TabsItem from './tabs-item'
+import TabsPane from './tabs-pane'
+
 
 Vue.component('u-button', Button)
 Vue.component('u-icon', Icon)
@@ -24,14 +29,21 @@ Vue.component('u-header', Header)
 Vue.component('u-content', Content)
 Vue.component('u-sider', Sider)
 Vue.component('u-footer', Footer)
+Vue.component('u-tabs', Tabs)
+Vue.component('u-tabs-head', TabsHead)
+Vue.component('u-tabs-body', TabsBody)
+Vue.component('u-tabs-item', TabsItem)
+Vue.component('u-tabs-pane', TabsPane)
 Vue.use(plugin)
+
 
 new Vue({
   data: {
     loading1: false,
     loading2: true,
     loading3: false,
-    message: 'hi'
+    message: 'hi',
+    selectedTab: 'sports'
   },
   methods: {
     showToast1(){
@@ -44,20 +56,20 @@ new Vue({
       this.showToast('bottom')
     },
 
-    showToast(position) {
-      this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
-        {
-          autoClose: false,
-          position,
-          closeButton: {
-            text: '知道了',
-            callback(toast) {
-              console.log('用户说他知道了')
-            },
-          },
-          enableHtml: false
-        }
-      )
-    }
+    // showToast(position) {
+    //   this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
+    //     {
+    //       autoClose: false,
+    //       position,
+    //       closeButton: {
+    //         text: '知道了',
+    //         callback(toast) {
+    //           console.log('用户说他知道了')
+    //         },
+    //       },
+    //       enableHtml: false
+    //     }
+    //   )
+    // }
   }
 }).$mount('#app')

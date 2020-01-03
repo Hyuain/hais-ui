@@ -34,9 +34,28 @@
 <body>
 
 <div id="app">
-  <button @click="showToast1">top</button>
-  <button @click="showToast2">middle</button>
-  <button @click="showToast3">bottom</button>
+
+<u-tabs :selected.sync="selectedTab">
+  <u-tabs-head>
+    <template slot="actions">
+      <button>actions</button>
+    </template>
+    <u-tabs-item name="anime">
+      <u-icon name="settings"></u-icon>动漫
+    </u-tabs-item>
+    <u-tabs-item name="finance" disabled>财经</u-tabs-item>
+    <u-tabs-item name="sports">体育</u-tabs-item>
+  </u-tabs-head>
+  <u-tabs-body>
+    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
+    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
+    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
+  </u-tabs-body>
+</u-tabs>
+
+<!--  <button @click="showToast1">top</button>-->
+<!--  <button @click="showToast2">middle</button>-->
+<!--  <button @click="showToast3">bottom</button>-->
 
 
 <!--  <u-container style="height: 100vh">-->
