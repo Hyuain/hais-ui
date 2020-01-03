@@ -26,7 +26,8 @@
     computed: {
       TabClass(){
         return {
-          active: this.active
+          active: this.active,
+          disabled: this.disabled
         }
       }
     },
@@ -37,6 +38,7 @@
     },
     methods:{
       onClick(){
+        if(this.disabled) { return }
         this.eventBus.$emit('update:selected', this.name, this)
       }
     }
@@ -45,6 +47,7 @@
 
 <style lang="scss" scoped>
   $active-color: blue;
+  $disabled-color: gray;
   .tabs-item{
     flex-shrink: 0;
     padding: 0 1.5em;
@@ -55,6 +58,9 @@
     &.active{
       color: $active-color;
       font-weight: bold;
+    }
+    &.disabled{
+      color: $disabled-color;
     }
   }
 
