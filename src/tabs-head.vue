@@ -14,7 +14,8 @@
     inject: ['eventBus'],
     mounted() {
       this.eventBus.$on('update:selected', (item, vm) => {
-        const {width, left} = vm.$el.getBoundingClientRect()
+        const {width} = vm.$el.getBoundingClientRect()
+        const left = vm.$el.offsetLeft
         this.$refs.line.style.width = `${width}px`
         this.$refs.line.style.left = `${left}px`
       })
@@ -34,7 +35,7 @@
     border-bottom: 1px solid $border-color;
     > .line {
       position: absolute;
-      bottom: 0;
+      bottom: -1px;
       border-bottom: 2px solid blue;
       transition: all .3s;
     }
