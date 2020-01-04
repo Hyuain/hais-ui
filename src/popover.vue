@@ -12,12 +12,6 @@
 <script>
   export default {
     name: "HaiPopover",
-    data() {
-      return {
-        visible: false,
-        timerId: undefined,
-      }
-    },
     props: {
       position: {
         type: String,
@@ -32,6 +26,12 @@
         validator(value) {
           return ['click', 'hover'].indexOf(value) >= 0
         }
+      },
+    },
+    data() {
+      return {
+        visible: false,
+        timerId: undefined,
       }
     },
     mounted() {
