@@ -46,22 +46,30 @@
         })
       },
       positioningContent() {
-        document.body.appendChild(this.$refs.contentWrapper)
-        const {top, left, height, width} = this.$refs.triggerWrapper.getBoundingClientRect()
-        const {height: contentHeight} = this.$refs.contentWrapper.getBoundingClientRect()
-        if (this.position === 'top') {
-          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
-          this.$refs.contentWrapper.style.top = top + window.scrollY + 'px'
-        } else if (this.position === 'bottom') {
-          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
-          this.$refs.contentWrapper.style.top = top + height + window.scrollY + 'px'
-        } else if (this.position === 'left') {
-          this.$refs.contentWrapper.style.left = left + window.scrollX + 'px'
-          this.$refs.contentWrapper.style.top = top + (height - contentHeight) / 2 + window.scrollY + 'px'
-        } else if (this.position === 'right') {
-          this.$refs.contentWrapper.style.left = left + window.scrollX + width + 'px'
-          this.$refs.contentWrapper.style.top = top + (height - contentHeight) / 2 + window.scrollY + 'px'
+        const {contentWrapper, triggerWrapper} = this.$refs
+        document.body.appendChild(contentWrapper)
+        const {top, left, height, width} = triggerWrapper.getBoundingClientRect()
+        const {height: contentHeight} = contentWrapper.getBoundingClientRect()
+        const positionTable = {
+          top: {
+            top: top + window.scrollY,
+            left: left + window.scrollX
+          },
+          bottom: {
+            top: top + height + window.scrollY,
+            left: left + window.scrollX
+          },
+          left: {
+            top: top + (height - contentHeight) / 2 + window.scrollY,
+            left: left + window.scrollX
+          },
+          right: {
+            top: top + (height - contentHeight) / 2 + window.scrollY,
+            left: left + window.scrollX + width
+          },
         }
+        contentWrapper.style.top = positionTable[this.position].top + 'px'
+        contentWrapper.style.left = positionTable[this.position].left + 'px'
       },
       onClickDocument(event) {
         const needClose =
