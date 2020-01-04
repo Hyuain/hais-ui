@@ -15,8 +15,7 @@
     data() {
       return {
         visible: false,
-        eventAdded: false,
-        timerId: 0,
+        timerId: undefined,
       }
     },
     props: {
@@ -40,7 +39,7 @@
         this.$refs.popover.addEventListener('click', this.onClickButton)
       } else {
         this.$refs.popover.addEventListener('mouseenter', this.open)
-        this.$refs.popover.addEventListener('mouseleave', this.mouseLeaveContent)
+        this.$refs.popover.addEventListener('mouseleave', this.onMouseLeaveButton)
       }
     },
     destroyed() {
@@ -48,20 +47,28 @@
         this.$refs.popover.removeEventListener('click', this.onClickButton)
       } else {
         this.$refs.popover.removeEventListener('mouseenter', this.open)
-        this.$refs.popover.removeEventListener('mouseleave', this.mouseLeaveContent)
+        this.$refs.popover.removeEventListener('mouseleave', this.onMouseLeaveButton)
       }
     },
     methods: {
-      mouseLeaveContent() {
+      onMouseLeaveButton() {
         this.timerId = setTimeout(() => {
           this.close()
         }, 200)
-        this.$refs.contentWrapper.addEventListener('mouseenter', this.mouseEnterContent)
+        if (this.$refs.contentWrapper) {
+          this.$refs.contentWrapper.addEventListener('mouseenter', this.onMouseEnterContent)
+        }
       },
-      mouseEnterContent() {
-        this.eventAdded = true
-        this.$refs.contentWrapper.addEventListener('mouseleave', this.close)
+      onMouseEnterContent() {
+        this.$refs.contentWrapper.addEventListener('mouseleave', this.onMouseLeaveContent)
         clearTimeout(this.timerId)
+      },
+      onMouseLeaveContent() {
+        if (this.$refs.contentWrapper) {
+          this.$refs.contentWrapper.removeEventListener('mouseenter', this.onMouseEnterContent)
+          this.$refs.contentWrapper.removeEventListener('mouseleave', this.onMouseLeaveContent)
+        }
+        this.close()
       },
       onClickButton(event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {
@@ -76,10 +83,6 @@
         this.visible = false
         if (this.trigger === 'click') {
           document.removeEventListener('click', this.onClickDocument)
-        }
-        if (this.eventAdded === true) {
-          this.$refs.contentWrapper.removeEventListener('mouseenter', this.mouseEnterContent)
-          this.$refs.contentWrapper.removeEventListener('mouseleave', this.close)
         }
       },
       open() {
@@ -134,12 +137,8 @@
   $border-color: #333;
   $border-radius: 4px;
   .popover {
-    display: inline-block;
-    vertical-align: top;
-    position: relative;
-    .trigger-wrapper {
-      display: inline-block;
-    }
+    display: inline-block;vertical-align: top;position: relative;
+    .trigger-wrapper {display: inline-block;}
   }
   .content-wrapper {
     position: absolute;
@@ -150,77 +149,30 @@
     word-break: break-all;
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5));
     background-color: white;
-    &::before, &::after {
-      content: '';
-      display: block;
-      border: 10px solid transparent;
-      width: 0;
-      height: 0;
-      position: absolute;
-    }
+    &::before, &::after {content: '';display: block;border: 10px solid transparent;width: 0;height: 0;position: absolute;}
     &.position-top {
-      transform: translateY(-100%);
-      margin-top: -10px;
-      &::before, &::after {
-        left: 10px;
-        border-bottom: none;
-      }
-      &::before {
-        top: 100%;
-        border-top-color: $border-color;
-      }
-      &::after {
-        top: calc(100% - 1px);
-        border-top-color: white;
-      }
+      transform: translateY(-100%);margin-top: -10px;
+      &::before, &::after {left: 10px;border-bottom: none;}
+      &::before {top: 100%;border-top-color: $border-color;}
+      &::after {top: calc(100% - 1px);border-top-color: white;}
     }
     &.position-bottom {
       margin-top: 10px;
-      &::before, &::after {
-        left: 10px;
-        border-top: none;
-      }
-      &::before {
-        bottom: 100%;
-        border-bottom-color: $border-color;
-      }
-      &::after {
-        bottom: calc(100% - 1px);
-        border-bottom-color: white;
-      }
+      &::before, &::after {left: 10px;border-top: none;}
+      &::before {bottom: 100%;border-bottom-color: $border-color;}
+      &::after {bottom: calc(100% - 1px);border-bottom-color: white;}
     }
     &.position-left {
-      transform: translateX(-100%);
-      margin-left: -10px;
-      &::before, &::after {
-        top: 50%;
-        border-right: none;
-        transform: translateY(-50%);
-      }
-      &::before {
-        left: 100%;
-        border-left-color: $border-color;
-      }
-      &::after {
-        left: calc(100% - 1px);
-        border-left-color: white;
-      }
+      transform: translateX(-100%);margin-left: -10px;
+      &::before, &::after {top: 50%;border-right: none;transform: translateY(-50%);}
+      &::before {left: 100%;border-left-color: $border-color;}
+      &::after {left: calc(100% - 1px);border-left-color: white;}
     }
     &.position-right {
       margin-left: 10px;
-      &::before, &::after {
-        top: 50%;
-        border-left: none;
-        transform: translateY(-50%);
-      }
-      &::before {
-        right: 100%;
-        border-right-color: $border-color;
-      }
-      &::after {
-        right: calc(100% - 1px);
-        border-right-color: white;
-      }
+      &::before, &::after {top: 50%;border-left: none;transform: translateY(-50%);}
+      &::before {right: 100%;border-right-color: $border-color;}
+      &::after {right: calc(100% - 1px);border-right-color: white;}
     }
   }
 </style>
