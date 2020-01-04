@@ -1,6 +1,6 @@
 <template>
   <div class="collapse-item">
-    <div class="title" @click="open = !open">
+    <div class="title" @click="onClick">
       {{title}}
     </div>
     <div class="content" v-if="open">
@@ -12,15 +12,36 @@
 <script>
   export default {
     name: "HaiCollapseItem",
+    inject: ['eventBus'],
     props: {
       title: {
         type: String,
         required: true
+      },
+      name: {
+        type: String,
+        required: true
       }
     },
-    data(){
+    data() {
       return {
         open: false
+      }
+    },
+    mounted() {
+      if(this.eventBus.alone){
+        this.eventBus.$on('update:selected', (name) => {
+          this.open = name === this.name;
+        })
+      }
+    },
+    methods: {
+      onClick() {
+        if (this.open) {
+          this.open = false
+        } else {
+          this.eventBus.$emit('update:selected', this.name)
+        }
       }
     }
   }
@@ -53,7 +74,6 @@
         border-bottom-right-radius: $border-radius;
       }
     }
-
     > .content {
       padding: 8px;
     }
