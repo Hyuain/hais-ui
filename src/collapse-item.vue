@@ -29,11 +29,15 @@
       }
     },
     mounted() {
-      if(this.eventBus.alone){
-        this.eventBus.$on('update:selected', (name) => {
-          this.open = name === this.name;
-        })
-      }
+      this.eventBus.$on('update:selected', (name) => {
+        if (this.name !== name) {
+          if(this.eventBus.alone) {
+            this.open = false
+          }
+        } else {
+          this.open = true
+        }
+      })
     },
     methods: {
       onClick() {

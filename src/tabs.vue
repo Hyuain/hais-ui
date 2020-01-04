@@ -45,6 +45,9 @@
             vm.$children.forEach(child => {
               if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
                 this.eventBus.$emit('update:selected', this.selected, child)
+                this.eventBus.$on('update:selected', (name) => {
+                  this.$emit('update:selected', this.selected)
+                })
               }
             })
           }
