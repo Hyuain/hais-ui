@@ -35,12 +35,13 @@
 
 <div id="app" style="padding: 100px">
 
-  <u-collapse alone selected="2">
+  <u-collapse :selected.sync="selectedTab">
     <u-collapse-item title="标题1" name="1">内容1</u-collapse-item>
     <u-collapse-item title="标题2" name="2">内容2</u-collapse-item>
     <u-collapse-item title="标题3" name="3">内容3</u-collapse-item>
   </u-collapse>
 
+  {{selectedTab}}
   <!--  <u-popover position="bottom">-->
   <!--    <template slot="content" slot-scope="{close}">-->
   <!--      <div>这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容</div>-->

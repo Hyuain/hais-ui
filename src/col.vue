@@ -5,6 +5,7 @@
 </template>
 
 <script>
+<script>
   let validator = (value) => {
     let keys = Object.keys(value)
     let valid = true

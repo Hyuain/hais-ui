@@ -21,7 +21,7 @@
       name: {
         type: String,
         required: true
-      }
+      },
     },
     data() {
       return {
@@ -29,22 +29,16 @@
       }
     },
     mounted() {
-      this.eventBus.$on('update:selected', (name) => {
-        if (this.name !== name) {
-          if(this.eventBus.alone) {
-            this.open = false
-          }
-        } else {
-          this.open = true
-        }
+      this.eventBus.$on('update:selected', (names) => {
+        this.open = names.indexOf(this.name) >= 0;
       })
     },
     methods: {
       onClick() {
         if (this.open) {
-          this.open = false
+          this.eventBus.$emit('remove:selected', this.name)
         } else {
-          this.eventBus.$emit('update:selected', this.name)
+          this.eventBus.$emit('add:selected', this.name)
         }
       }
     }

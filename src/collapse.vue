@@ -15,16 +15,12 @@
         default: false
       },
       selected: {
-        type: String,
+        type: Array,
       }
     },
     data() {
       return {
-        eventBus: new Vue({
-          data: {
-            alone:this.alone
-          }
-        }),
+        eventBus: new Vue({}),
       }
     },
     provide() {
@@ -34,8 +30,22 @@
     },
     mounted() {
       this.eventBus.$emit('update:selected', this.selected)
-      this.eventBus.$on('update:selected', (name) => {
-        this.$emit('update:selected', name)
+      this.eventBus.$on('add:selected', (name) => {
+        let selectedTemp = JSON.parse(JSON.stringify(this.selected))
+        if (this.alone) {
+          selectedTemp = [name]
+        } else {
+          selectedTemp.push(name)
+        }
+        this.eventBus.$emit('update:selected', selectedTemp)
+        this.$emit('update:selected', selectedTemp)
+      })
+      this.eventBus.$on('remove:selected', (name) => {
+        let selectedTemp = JSON.parse(JSON.stringify(this.selected))
+        const index = selectedTemp.indexOf(name)
+        selectedTemp.splice(index, 1)
+        this.eventBus.$emit('update:selected', selectedTemp)
+        this.$emit('update:selected', selectedTemp)
       })
     }
   }
