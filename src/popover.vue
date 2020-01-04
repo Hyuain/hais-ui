@@ -3,7 +3,7 @@
     <div ref="contentWrapper" class="content-wrapper" v-if="visible" :class="{[`position-${position}`]: true}">
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper" class="trigger-wrapper" @click="onClickButton">
+    <span ref="triggerWrapper" class="trigger-wrapper">
       <slot></slot>
     </span>
   </div>
@@ -13,7 +13,11 @@
   export default {
     name: "HaiPopover",
     data() {
-      return {visible: false}
+      return {
+        visible: false,
+        eventAdded: false,
+        timerId: 0,
+      }
     },
     props: {
       position: {
@@ -22,9 +26,43 @@
         validator(value) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
         }
+      },
+      trigger: {
+        type: String,
+        default: 'click',
+        validator(value) {
+          return ['click', 'hover'].indexOf(value) >= 0
+        }
+      }
+    },
+    mounted() {
+      if (this.trigger === 'click') {
+        this.$refs.popover.addEventListener('click', this.onClickButton)
+      } else {
+        this.$refs.popover.addEventListener('mouseenter', this.open)
+        this.$refs.popover.addEventListener('mouseleave', this.mouseLeaveContent)
+      }
+    },
+    destroyed() {
+      if (this.trigger === 'click') {
+        this.$refs.popover.removeEventListener('click', this.onClickButton)
+      } else {
+        this.$refs.popover.removeEventListener('mouseenter', this.open)
+        this.$refs.popover.removeEventListener('mouseleave', this.mouseLeaveContent)
       }
     },
     methods: {
+      mouseLeaveContent() {
+        this.timerId = setTimeout(() => {
+          this.close()
+        }, 200)
+        this.$refs.contentWrapper.addEventListener('mouseenter', this.mouseEnterContent)
+      },
+      mouseEnterContent() {
+        this.eventAdded = true
+        this.$refs.contentWrapper.addEventListener('mouseleave', this.close)
+        clearTimeout(this.timerId)
+      },
       onClickButton(event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {
           if (this.visible === true) {
@@ -36,13 +74,21 @@
       },
       close() {
         this.visible = false
-        document.removeEventListener('click', this.onClickDocument)
+        if (this.trigger === 'click') {
+          document.removeEventListener('click', this.onClickDocument)
+        }
+        if (this.eventAdded === true) {
+          this.$refs.contentWrapper.removeEventListener('mouseenter', this.mouseEnterContent)
+          this.$refs.contentWrapper.removeEventListener('mouseleave', this.close)
+        }
       },
       open() {
         this.visible = true
         this.$nextTick(() => {
           this.positioningContent()
-          document.addEventListener('click', this.onClickDocument)
+          if (this.trigger === 'click') {
+            document.addEventListener('click', this.onClickDocument)
+          }
         })
       },
       positioningContent() {
@@ -117,13 +163,14 @@
       margin-top: -10px;
       &::before, &::after {
         left: 10px;
+        border-bottom: none;
       }
       &::before {
-        top: calc(100% + 1px);
+        top: 100%;
         border-top-color: $border-color;
       }
       &::after {
-        top: 100%;
+        top: calc(100% - 1px);
         border-top-color: white;
       }
     }
@@ -131,13 +178,14 @@
       margin-top: 10px;
       &::before, &::after {
         left: 10px;
+        border-top: none;
       }
       &::before {
-        bottom: calc(100% + 1px);
+        bottom: 100%;
         border-bottom-color: $border-color;
       }
       &::after {
-        bottom: 100%;
+        bottom: calc(100% - 1px);
         border-bottom-color: white;
       }
     }
@@ -146,14 +194,15 @@
       margin-left: -10px;
       &::before, &::after {
         top: 50%;
+        border-right: none;
         transform: translateY(-50%);
       }
       &::before {
-        left: calc(100% + 1px);
+        left: 100%;
         border-left-color: $border-color;
       }
       &::after {
-        left: 100%;
+        left: calc(100% - 1px);
         border-left-color: white;
       }
     }
@@ -161,14 +210,15 @@
       margin-left: 10px;
       &::before, &::after {
         top: 50%;
+        border-left: none;
         transform: translateY(-50%);
       }
       &::before {
-        right: calc(100% + 1px);
+        right: 100%;
         border-right-color: $border-color;
       }
       &::after {
-        right: 100%;
+        right: calc(100% - 1px);
         border-right-color: white;
       }
     }
