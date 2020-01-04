@@ -7,8 +7,13 @@ sidebarDepth: 2
 
 使用方法
 
+<ClientOnly>
 <button-demos></button-demos>
+</ClientOnly>
 
-
-
-哈哈哈
+```html
+<u-button>默认按钮</u-button>
+<u-button icon="settings">默认按钮</u-button>
+<u-button loading>默认按钮</u-button>
+<u-button disabled>默认按钮</u-button>
+```

@@ -1,5 +1,6 @@
 module.exports = {
   title: 'Hais UI',
+  base:'/hais-ui/',
   description: '一个简单好用的 UI 框架',
   themeConfig: {
     nav: [
