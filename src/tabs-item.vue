@@ -27,7 +27,8 @@
       TabClass() {
         return {
           active: this.active,
-          disabled: this.disabled
+          disabled: this.disabled,
+          [`direction-${this.eventBus.direction}`]: true
         }
       }
     },
@@ -56,19 +57,32 @@
   $active-color: blue;
   $disabled-color: gray;
   .tabs-item {
-    flex-shrink: 0;
-    padding: 0 1.5em;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    &.active {
-      color: $active-color;
-      font-weight: bold;
+    &.direction-horizontal{
+      flex-shrink: 0;
+      padding: 0 1.5em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      &.active {
+        color: $active-color;
+        font-weight: bold;
+      }
+      &.disabled {
+        color: $disabled-color;
+        cursor: not-allowed;
+      }
     }
-    &.disabled {
-      color: $disabled-color;
-      cursor: not-allowed;
+    &.direction-vertical{
+      padding: .5em 1em;
+      &.active {
+        color: $active-color;
+        font-weight: bold;
+      }
+      &.disabled {
+        color: $disabled-color;
+        cursor: not-allowed;
+      }
     }
   }
 

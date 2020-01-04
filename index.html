@@ -79,7 +79,7 @@
   <!--    <u-button>按钮</u-button>-->
   <!--  </u-popover>-->
 
-  <u-tabs selected="anime">
+  <u-tabs selected="sports">
     <u-tabs-head>
       <template slot="actions">
         <button>设置</button>
@@ -96,7 +96,25 @@
       <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
     </u-tabs-body>
   </u-tabs>
-
+<div style="margin: 100px;">
+  <u-tabs selected="anime" direction="vertical">
+    <u-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
+      <u-tabs-item name="anime">
+        <u-icon name="settings"></u-icon>动漫
+      </u-tabs-item>
+      <u-tabs-item name="finance" disabled>财经</u-tabs-item>
+      <u-tabs-item name="sports">体育</u-tabs-item>
+    </u-tabs-head>
+    <u-tabs-body>
+      <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
+      <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
+      <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
+    </u-tabs-body>
+  </u-tabs>
+</div>
 
 
   <!--  <button @click="showToast1">top</button>-->

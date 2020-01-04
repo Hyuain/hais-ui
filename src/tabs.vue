@@ -1,5 +1,5 @@
 <template>
-  <div class="tabs">
+  <div class="tabs" :class="{[`direction-${this.eventBus.direction}`]:true}">
     <slot></slot>
   </div>
 </template>
@@ -24,7 +24,13 @@
     },
     data() {
       return {
-        eventBus: new Vue()
+        eventBus: new Vue({
+          data: () => {
+            return {
+              direction: this.direction
+            }
+          }
+        })
       }
     },
     provide() {
@@ -32,20 +38,20 @@
         eventBus: this.eventBus
       }
     },
-    methods:{
-      checkChildren(){
+    methods: {
+      checkChildren() {
         if (this.$children.length === 0) {
           console && console.warn &&
           console.warn(`<u-tabs> 的子组件应该是 <u-tabs-head> 和 <u-tabs-nav>，但是你没有写子组件`)
         }
       },
-      selectTab(){
+      selectTab() {
         this.$children.forEach(vm => {
           if (vm.$options.name === 'HaiTabsHead') {
             vm.$children.forEach(child => {
               if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
                 this.eventBus.$emit('update:selected', this.selected, child)
-                this.eventBus.$on('update:selected', (name) => {
+                this.eventBus.$on('update:selected', () => {
                   this.$emit('update:selected', this.selected)
                 })
               }
@@ -63,5 +69,10 @@
 
 <style lang="scss" scoped>
   .tabs {
+    &.direction-vertical {
+      display: flex;
+
+    }
   }
+
 </style>
