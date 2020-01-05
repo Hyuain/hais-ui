@@ -1,0 +1,38 @@
+const expect = chai.expect;
+import Vue from 'vue'
+import Collapse from '../src/collapse.vue'
+import CollapseItem from '../src/collapse-item.vue'
+
+Vue.component('u-collapse', Collapse)
+Vue.component('u-collapse-item', CollapseItem)
+
+Vue.config.productionTip = false
+Vue.config.devtools = false
+
+describe('CollapseItem', () => {
+
+  it('存在.', () => {
+    expect(CollapseItem).to.be.ok
+  })
+
+  it('可以设置 name 和 title.', (done) => {
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    div.innerHTML = `
+      <u-collapse>
+        <u-collapse-item title="标题1" name="1">内容1</u-collapse-item>
+      </u-collapse>
+    `
+    const vm = new Vue({
+      el: div
+    })
+    vm.$nextTick(() => {
+      const collapseEl = vm.$children[0]
+      const collapseItem = collapseEl.$children[0]
+      expect(collapseItem.$refs.title.getAttribute('data-name')).to.eq('1')
+      expect(collapseItem.$refs.title.getAttribute('data-title')).to.eq('标题1')
+      vm.$el.remove()
+      done()
+    })
+  })
+})

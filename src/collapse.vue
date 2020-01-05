@@ -16,6 +16,9 @@
       },
       selected: {
         type: Array,
+        default() {
+          return []
+        }
       }
     },
     data() {

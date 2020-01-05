@@ -24,7 +24,6 @@
           this.$refs.line.style.top = `${top + 1}px`
           this.$refs.line.style.height = `${height - 2}px`
         }
-
       })
     }
   }

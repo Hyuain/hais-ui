@@ -1,9 +1,6 @@
-import Row from "../src/row"
-
 const expect = chai.expect;
 import Vue from 'vue'
 import Popover from '../src/popover.vue'
-import Col from "../src/col"
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -14,7 +11,7 @@ describe('Popover', () => {
     expect(Popover).to.be.ok
   })
 
-  it('可以设置position.', (done) => {
+  it('可以设置 position.', (done) => {
     Vue.component('u-popover', Popover)
     const div = document.createElement('div')
     document.body.appendChild(div)
@@ -33,11 +30,12 @@ describe('Popover', () => {
     vm.$nextTick(() => {
       const {contentWrapper} = vm.$refs.popover.$refs
       expect(contentWrapper.classList.contains('position-bottom')).to.be.true
+      vm.$el.remove()
       done()
     })
   })
 
-  xit('可以设置trigger.', (done) => {
+  it('可以设置 trigger.', (done) => {
     Vue.component('u-popover', Popover)
     const div = document.createElement('div')
     document.body.appendChild(div)
@@ -52,16 +50,16 @@ describe('Popover', () => {
     const vm = new Vue({
       el: div
     })
-    setTimeout(()=> {
+    vm.$nextTick(() => {
       const event = new Event('mouseenter')
-      vm.$el.dispatchEvent(event)
-      vm.$nextTick(()=> {
-        const {contentWrapper} = vm.$refs.popover.$refs
+      const popoverEl = vm.$children[0]
+      popoverEl.$el.dispatchEvent(event)
+      vm.$nextTick(() => {
+        const {contentWrapper} = popoverEl.$refs
         expect(contentWrapper).to.exist
+        vm.$el.remove()
         done()
       })
-    },200)
+    })
   })
-
-
 })
