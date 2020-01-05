@@ -1,5 +1,5 @@
 <template>
-  <div class="u-button-group">
+  <div class="button-group">
     <slot></slot>
   </div>
 </template>
@@ -18,18 +18,11 @@
   };
 </script>
 <style lang="scss" scoped>
-  $button-height: 32px;
-  $font-size: 14px;
-  $button-bg: white;
-  $button-active-bg: #eee;
-  $border-radius: 4px;
-  $color: #333;
-  $border-color: #999;
-  $border-color-hover: #666;
-  .u-button-group {
+  @import "var";
+  .button-group {
     display: inline-flex;
     vertical-align: middle;
-    > .u-button {
+    > .button {
       border-radius: 0;
       &:not(:first-child) {
         margin-left: -1px;
