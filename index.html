@@ -14,6 +14,17 @@
       box-sizing: border-box;
     }
 
+    #box1,#box2,#box3{
+      height: 100px;
+      width: 100%;
+    }
+    #box2 {
+      background-color: #cbf1f5;
+    }
+    #box1, #box3{
+      background-color: #71c9ce;
+    }
+
   </style>
 </head>
 
@@ -117,71 +128,82 @@
 <!--</div>-->
 
 
-  <!--  <button @click="showToast1">top</button>-->
-  <!--  <button @click="showToast2">middle</button>-->
-  <!--  <button @click="showToast3">bottom</button>-->
+<!--    <button @click="showToast1">top</button>-->
+<!--    <button @click="showToast2">middle</button>-->
+<!--    <button @click="showToast3">bottom</button>-->
 
 
-  <!--  <u-container style="height: 100vh">-->
-  <!--    <u-sider>sider</u-sider>-->
-  <!--    <u-container>-->
-  <!--      <u-header>header</u-header>-->
-  <!--      <u-content>content</u-content>-->
-  <!--      <u-footer>footer</u-footer>-->
-  <!--    </u-container>-->
-  <!--  </u-container>-->
+    <u-container style="height: 100vh">
+      <u-sider>sider</u-sider>
+      <u-container>
+        <u-header>header</u-header>
+        <u-content>content</u-content>
+        <u-footer>footer</u-footer>
+      </u-container>
+    </u-container>
 
-  <!--  <u-container style="height: 100vh">-->
-  <!--    <u-header class="demo">header</u-header>-->
-  <!--    <u-content class="demo">content</u-content>-->
-  <!--    <u-footer class="demo">footer</u-footer>-->
-  <!--  </u-container>-->
-
-  <!--  <div class="box">-->
-
-
-  <!--    <u-row class="topbar">-->
-  <!--      <u-col class="demoBox" span="24"-->
-  <!--             :pad="{span:8}"-->
-  <!--             :wide-pc="{span:1}"-->
-  <!--      ></u-col>-->
-  <!--      <u-col class="demoBox" span="24" offset="0"-->
-  <!--             :pad="{span:15, offset:1}"-->
-  <!--             :wide-pc="{span:19, offset:4}"-->
-  <!--      ></u-col>-->
-  <!--    </u-row>-->
-  <!--    <u-row class="topbar">-->
-  <!--      <u-col class="demoBox" span="2"-->
-  <!--      ></u-col>-->
-  <!--      <u-col class="demoBox" span="22"-->
-  <!--      ></u-col>-->
-  <!--    </u-row>-->
-  <!--    <u-row class="logo-and-search-and-qrcode">-->
-  <!--      <u-col class="demoBox" span="4">-->
-  <!--        <div class="logo-wrapper">-->
-  <!--          <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">-->
-  <!--        </div>-->
-  <!--      </u-col>-->
-  <!--      <u-col class="demoBox" span="14"></u-col>-->
-  <!--      <u-col class="demoBox" span="6"></u-col>-->
-  <!--    </u-row>-->
-  <!--  </div>-->
+    <u-container style="height: 100vh">
+      <u-header class="demo">header</u-header>
+      <u-content class="demo">content</u-content>
+      <u-footer class="demo">footer</u-footer>
+    </u-container>
 
   <!--  <div class="box">-->
-  <!--    <u-input v-model="message"></u-input>-->
-  <!--    <p>{{message}}</p>-->
-  <!--    <button @click="message+=1">+1</button>-->
-  <!--    <u-input value="啧啧啧" disabled></u-input>-->
-  <!--    <u-input value="啧啧啧" readonly></u-input>-->
-  <!--  </div>-->
 
-  <!--  <div class="box">-->
-  <!--    <u-input value="啧" error="姓名不能少于两个字"></u-input>-->
-  <!--  </div>-->
-  <!--  <div class="box">-->
-  <!--    <u-input value="啧" @change="inputChange"></u-input>-->
-  <!--  </div>-->
-  <!--  <div class="box">-->
+
+<!--      <u-row class="topbar">-->
+<!--        <u-col class="demoBox" span="24"-->
+<!--               :pad="{span:8}"-->
+<!--               :wide-pc="{span:1}"-->
+<!--        ></u-col>-->
+<!--        <u-col class="demoBox" span="24" offset="0"-->
+<!--               :pad="{span:15, offset:1}"-->
+<!--               :wide-pc="{span:19, offset:4}"-->
+<!--        ></u-col>-->
+<!--      </u-row>-->
+
+
+  <u-row id="container" auto>
+    <u-col id="box1"></u-col>
+    <u-col id="box2"></u-col>
+    <u-col id="box3"></u-col>
+  </u-row>
+
+
+
+      <u-row>
+        <u-col span="2"></u-col>
+        <u-col span="22"></u-col>
+      </u-row>
+
+
+      <u-row class="logo-and-search-and-qrcode">
+        <u-col class="demoBox" span="4">
+          <div class="logo-wrapper">
+            <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">
+          </div>
+        </u-col>
+        <u-col class="demoBox" span="14"></u-col>
+        <u-col class="demoBox" span="6"></u-col>
+      </u-row>
+
+
+    <div class="box">
+      <u-input v-model="message"></u-input>
+      <p>{{message}}</p>
+      <button @click="message+=1">+1</button>
+      <u-input value="啧啧啧" disabled></u-input>
+      <u-input value="啧啧啧" readonly></u-input>
+    </div>
+
+    <div class="box">
+      <u-input value="啧" error="姓名不能少于两个字"></u-input>
+    </div>
+    <div class="box">
+      <u-input value="啧" @change="inputChange"></u-input>
+    </div>
+
+<!--    <div class="box">-->
 
       <u-button :loading="loading1" @click="loading1 = !loading1">
         按钮

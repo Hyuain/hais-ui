@@ -16,6 +16,10 @@
         validator(value) {
           return ['left', 'right', 'center'].indexOf(value) >= 0
         }
+      },
+      auto: {
+        type: Boolean,
+        default: false
       }
     },
     computed:{
@@ -26,8 +30,12 @@
         }
       },
       rowClass(){
-        let {align} =this
-        return [align && `align-${align}`]
+        let {align, auto} =this
+        return {
+          [`align-${align}`]:align,
+          'auto':auto
+        }
+
       }
     },
     mounted() {
@@ -42,6 +50,9 @@
   .row{
     display: flex;
     flex-wrap: wrap;
+    &.auto{
+      flex-wrap: nowrap;
+    }
     &.align-left{
       justify-content: flex-start;
     }

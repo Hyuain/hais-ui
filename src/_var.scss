@@ -1,25 +1,44 @@
 /*
-** 基本颜色
+** 主题配色
 */
-$ex-light-color: #e3fdfd;
-$light-primary-color: #cbf1f5;
-$primary-color: #a6e3e9;
-$dark-primary-color: #71c9ce;
-$ex-dark-color: #2a6c6f;
-$background-color: #ffffff;
+
+$color-ex-light: #e3fdfd;
+$color-light: #cbf1f5;
+$color-primary: #a6e3e9;
+$color-dark: #56a7ac;
+$color-ex-dark: #2a6c6f;
+$color-base: #ffffff;
+$color-disabled: #aaaaaa;
+$color-error: #ff6464;
+
 /*
 ** 整体设置
 */
-$text-color: $ex-dark-color;
-$light-text-color: $ex-light-color;
+
+$text-color: $color-ex-dark;
+$text-color-light: $color-ex-light;
 $font-size: 14px;
+
+$box-shadow-color: rgba(42, 108, 111, 0.7);
+$box-shadow-color-error: rgba(255, 100, 100, 0.7);
+$box-shadow-color-disabled: rgba(170, 170, 170, 0.7);
+
+$border-color: $color-dark;
+$border-color-hover: $color-ex-dark;
 $border-radius: 16px;
-$box-shadow-color: rgba(113, 201, 206, 0.7);
-$border-color: $primary-color;
-$border-color-hover: $dark-primary-color;
+
+$background-color: $color-base;
+
+
 /*
 ** 按钮 - button
 */
+
 $button-height: 32px;
-$button-bg-active: $dark-primary-color;
-$button-text-active: $light-text-color;
+$button-bg-active: $color-ex-dark;
+$button-text-active: $text-color-light;
+
+/*
+** 输入框 - input
+*/
+$input-height: 32px;

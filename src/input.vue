@@ -37,22 +37,23 @@
   }
 </script>
 <style lang="scss" scoped>
-  $height: 32px;
-  $border-color: #999;
-  $border-color-hover: #666;
-  $border-radius: 4px;
-  $font-size: 12px;
-  $box-shadow-color: rgba(0, 0, 0, 0.5);
-  $color-error: #F1453D;
-  .wrapper {font-size: $font-size;display: inline-flex;align-items: center;
+  @import "var";
+  .wrapper {
+    font-size: $font-size;display: inline-flex;align-items: center;
     > :not(:last-child) {margin-right: .5em;}
-    > input {height: $height;border: 1px solid $border-color;border-radius: $border-radius;padding: 0 8px;font-size: inherit;
+    > input {
+      height: $input-height;padding: 0 8px;font-size: inherit;color: $text-color;
+      border: 1px solid $border-color;border-radius: $border-radius;
       &:hover {border-color: $border-color-hover;}
-      &:focus {box-shadow: inset 0 1px 3px $box-shadow-color;outline: none;}
-      &[disabled], &[readonly] {border-color: #aaa;color: #aaa;cursor: not-allowed;}
+      &:focus {box-shadow: inset 0 1px 1px $box-shadow-color;outline: none;}
+      &[disabled], &[readonly] {border-color: $color-disabled;color: $color-disabled;cursor: not-allowed;}
+      &[readonly]:focus {box-shadow: inset 0 1px 1px $box-shadow-color-disabled;}
     }
     &.error {
-      > input {border-color: $color-error;}
+      > input {
+        border-color: $color-error; color: $color-error;
+        &:focus {box-shadow: inset 0 1px 1px $box-shadow-color-error;}
+      }
     }
     .icon-error {fill: $color-error;}
     .message-error {color: $color-error;}

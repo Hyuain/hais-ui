@@ -63,20 +63,20 @@ new Vue({
       this.showToast('bottom')
     },
 
-    // showToast(position) {
-    //   this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
-    //     {
-    //       autoClose: false,
-    //       position,
-    //       closeButton: {
-    //         text: '知道了',
-    //         callback(toast) {
-    //           console.log('用户说他知道了')
-    //         },
-    //       },
-    //       enableHtml: false
-    //     }
-    //   )
-    // }
+    showToast(position) {
+      this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
+        {
+          autoClose: false,
+          position,
+          closeButton: {
+            text: '知道了',
+            callback(toast) {
+              console.log('用户说他知道了')
+            },
+          },
+          enableHtml: false
+        }
+      )
+    }
   }
 }).$mount('#app')

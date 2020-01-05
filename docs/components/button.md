@@ -1,11 +1,12 @@
 ---
-title: 按钮
+title: 按钮 - button
 sidebarDepth: 2
 ---
 
 # 按钮
 
-## icon
+## icon 
+<font color=#56a7ac>可选</font>
 
 <br>
 
@@ -37,6 +38,7 @@ sidebarDepth: 2
 <u-icon name="settings"></u-icon>
 ```
 ## loading
+<font color=#56a7ac>可选</font>
 
 <br>
 
@@ -60,6 +62,7 @@ sidebarDepth: 2
 `loading` 属性可以控制是否显示 `loading` 图标，显示 `loading` 图标时将隐藏之前的图标；也可以给 `loading` 属性传一个变量，达到切换图标的效果。
 
 ## icon-position
+<font color=#56a7ac>可选</font>
 
 <br>
 
@@ -83,6 +86,7 @@ sidebarDepth: 2
 可以通过 `icon-position` 来控制图标是在左边还是在右边，`loading` 图标也将显示在相同的位置。
 
 ## button-group
+<font color=#56a7ac>可选</font>
 
 <br>
 
