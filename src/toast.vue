@@ -78,10 +78,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $font-size: 14px;
-  $toast-min-height: 40px;
-  $toast-bg: rgba(0, 0, 0, .75);
-  $animation-duration: .3s;
+  @import "var";
   @keyframes slide-up {
     0% {opacity: 0; transform: translateY(100%);}
     100% {opacity: 1; transform: translateY(0%);}
@@ -98,6 +95,7 @@
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 100;
     &.position-top {
       top: 0;
       .toast {
@@ -130,7 +128,7 @@
     align-items: center;
     background: $toast-bg;
     box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
-    border-radius: 4px;
+    border-radius: $toast-border-radius;
     color: white;
     padding: 0 16px;
     .line {
