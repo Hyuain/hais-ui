@@ -1,0 +1,66 @@
+/*
+** 主题配色
+*/
+
+$color-ex-light: #e3fdfd;
+$color-light: #cbf1f5;
+$color-primary: #56a7ac;
+$color-dark: #2a6c6f;
+$color-ex-dark: #284450;
+$color-base: #ffffff;
+$color-disabled: #aaaaaa;
+$color-error: #ff6464;
+
+/*
+** 整体设置
+*/
+
+$text-color: $color-dark;
+$text-color-dark: $color-ex-dark;
+$text-color-light: $color-ex-light;
+$text-color-accent: $color-primary;
+$font-size: 14px;
+
+$box-shadow-color: rgba(42, 108, 111, 0.7);
+$box-shadow-color-error: rgba(255, 100, 100, 0.7);
+$box-shadow-color-disabled: rgba(170, 170, 170, 0.7);
+
+$border-color: $color-primary;
+$border-color-hover: $color-dark;
+$border-radius: 16px;
+
+$background-color: $color-base;
+
+
+/*
+** 按钮 - button
+*/
+
+$button-height: 32px;
+$button-bg-active: $color-dark;
+$button-text-active: $text-color-light;
+
+/*
+** 输入框 - input
+*/
+
+$input-height: 32px;
+
+/*
+** 弹出消息 - toast
+*/
+
+$toast-min-height: 40px;
+$toast-bg: rgba(10, 25, 28, 0.76);
+$toast-animation-duration: .3s;
+$toast-border-radius: 10px;
+
+/*
+** 标签 - tabs
+*/
+
+$tab-height: 40px;
+$active-color: blue;
+$tabs-border-color: rgba(0, 0, 0, .1);
+$active-color: blue;
+$disabled-color: gray;
