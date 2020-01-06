@@ -15,8 +15,10 @@ $color-error: #ff6464;
 ** 整体设置
 */
 
-$text-color: $color-ex-dark;
+$text-color: $color-dark;
 $text-color-light: $color-ex-light;
+$text-color-dark: $color-ex-dark;
+$text-color-accent: $color-primary;
 $font-size: 14px;
 
 $box-shadow-color: rgba(42, 108, 111, 0.7);
@@ -55,6 +57,8 @@ $toast-bg: rgba(21, 23, 29, 0.75);
 $toast-border-radius: 10px;
 
 /*
-** 弹出信息 - toast
+** 标签 - tabs
 */
 
+$tab-height: 40px;
+$tab-border-color: rgba(0, 0, 0, .1);

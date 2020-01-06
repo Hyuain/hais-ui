@@ -68,10 +68,11 @@
 </script>
 
 <style lang="scss" scoped>
+  $text-color-dark: #282c34;
   .tabs {
+    color: $text-color-dark;
     &.direction-vertical {
       display: flex;
-
     }
   }
 

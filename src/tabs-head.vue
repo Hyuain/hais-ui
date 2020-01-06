@@ -31,19 +31,19 @@
 
 <style lang="scss" scoped>
   $tab-height: 40px;
-  $active-color: blue;
-  $border-color: rgba(0, 0, 0, .1);
+  $text-color-accent: #56a7ac;
+  $tab-border-color: rgba(0, 0, 0, .1);
   .tabs-head {
     &.direction-horizontal {
       display: flex;
       height: $tab-height;
       justify-content: flex-start;
       position: relative;
-      border-bottom: 1px solid $border-color;
+      border-bottom: 1px solid $tab-border-color;
       > .line {
         position: absolute;
         bottom: -1px;
-        border-bottom: 2px solid blue;
+        border-bottom: 2px solid $text-color-accent;
         transition: all .3s;
       }
       > .actions-wrapper {
@@ -58,11 +58,11 @@
       flex-direction: column;
       align-items: center;
       position: relative;
-      border-right: 1px solid $border-color;
+      border-right: 1px solid $tab-border-color;
       > .line {
         position: absolute;
         right: -1px;
-        border-right: 2px solid blue;
+        border-right: 2px solid $text-color-accent;
         transition: all .3s;
       }
       > .actions-wrapper {
