@@ -3,16 +3,28 @@ title: 折叠面板 - collapse
 sidebarDepth: 2
 ---
 
-# 输入框
+# 折叠面板
 
-## value
-<font color=#56a7ac>可选</font>
+## 简单实例
 
 <br>
 
 <ClientOnly>
-<toast-demo-1></toast-demo-1>
+<collapse-demo-1></collapse-demo-1>
 </ClientOnly>
+
+```html
+<u-collapse :selected="['name1','name3']">
+  <u-collapse-item title="标题1" name="name1">这里是第1段内容</u-collapse-item>
+  <u-collapse-item title="标题2" name="name2">这里是第2段内容</u-collapse-item>
+  <u-collapse-item title="标题3" name="name3">这里是第3段内容</u-collapse-item>
+</u-collapse>
+```
+
+`collapse` 由 `collapse` 和 `collapse-item` 两部分组成，包含基础属性 `selected` `title` `name`。
+
+## title
+<font color=#ff6464>必须</font>
 
 - 类型：`String`
 
@@ -21,65 +33,13 @@ sidebarDepth: 2
 - 用法：
 
 ```html
-<u-input value="请输入内容"></u-input>
+<u-collapse-item title="标题1" name="1">这里是第1段内容</u-collapse-item>
 ```
 
-在 `value` 属性中可以传入默认显示的值。
+用于设置 `collapse` 的每一项的标题中的值。
 
-## disabled
-<font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<input-demo-2></input-demo-2>
-</ClientOnly>
-
-- 类型：`Boolean`
-
-- 默认值：`false`
-
-- 可接受值：`true` `false`
-
-- 用法：
-
-```html
-<u-input value="不可用" disabled></u-input>
-```
-
-将输入框设置为 `disabled`。
-
-## readonly
-<font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<input-demo-3></input-demo-3>
-</ClientOnly>
-
-- 类型：`Boolean`
-
-- 默认值：`false`
-
-- 可接受值：`true` `false`
-
-- 用法：
-
-```html
-<u-input value="只读" readonly></u-input>
-```
-
-将输入框设置为 `readonly`。
-
-## error
-<font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<input-demo-4></input-demo-4>
-</ClientOnly>
+## name
+<font color=#ff6464>必须</font>
 
 - 类型：`String`
 
@@ -88,23 +48,28 @@ sidebarDepth: 2
 - 用法：
 
 ```html
-<u-input error="您输入的信息不符合要求！"></u-input>
+<u-collapse-item title="标题1" name="1">这里是第1段内容</u-collapse-item>
 ```
 
-可以给传入 `error` 传入错误信息，并且将输入框变为 `error` 样式。
+每一项都必须有一个 `name` 属性，否则将会引起错误。
 
-## v-model
+## selected
+<font color=#56a7ac>可选</font>
 
-输入框组件支持 `v-model` 双向绑定。
+- 类型：`Array`
 
-- 示例：
+- 默认值：`[]`
 
-<ClientOnly>
-<input-demo-5></input-demo-5>
-</ClientOnly>
+- 用法：
 
 ```html
-<u-input v-model="message"></u-input>
-<p>{{message}}</p>
-<u-button @click="message+=1">点我</u-button>
+<u-collapse :selected="['name1','name3']">
+  <u-collapse-item title="标题1" name="name1">这里是第1段内容</u-collapse-item>
+  <u-collapse-item title="标题2" name="name2">这里是第2段内容</u-collapse-item>
+  <u-collapse-item title="标题3" name="name3">这里是第3段内容</u-collapse-item>
+</u-collapse>
 ```
+
+`selected` 属性需要传入一个数组，这个数组包含了默认展开项的 `name`，默认为空数组，即均不展开。
+
+`selected` 属性也支持 `.sync` 语法，示例如下：

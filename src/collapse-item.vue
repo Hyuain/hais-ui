@@ -46,8 +46,8 @@
 </script>
 
 <style lang="scss" scoped>
-  $border-color: #ddd;
-  $border-radius: 4px;
+  $collapse-border-radius: 10px;
+  $border-color: #56a7ac;
   .collapse-item {
     > .title {
       border: 1px solid $border-color;
@@ -61,15 +61,15 @@
     }
     &:first-child {
       > .title {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
+        border-top-left-radius: $collapse-border-radius;
+        border-top-right-radius: $collapse-border-radius;
       }
     }
     &:last-child {
       > .title:last-child {
         margin-bottom: -1px;
-        border-bottom-left-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $collapse-border-radius;
+        border-bottom-right-radius: $collapse-border-radius;
       }
     }
     > .content {

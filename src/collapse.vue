@@ -19,11 +19,12 @@
         default() {
           return []
         }
-      }
+      },
     },
     data() {
       return {
         eventBus: new Vue({}),
+        selectedCopy: []
       }
     },
     provide() {
@@ -32,33 +33,34 @@
       }
     },
     mounted() {
-      this.eventBus.$emit('update:selected', this.selected)
+      this.selectedCopy = JSON.parse(JSON.stringify(this.selected))
+      this.eventBus.$emit('update:selected', this.selectedCopy)
       this.eventBus.$on('add:selected', (name) => {
-        let selectedTemp = JSON.parse(JSON.stringify(this.selected))
         if (this.alone) {
-          selectedTemp = [name]
+          this.selectedCopy = [name]
         } else {
-          selectedTemp.push(name)
+          this.selectedCopy.push(name)
         }
-        this.eventBus.$emit('update:selected', selectedTemp)
-        this.$emit('update:selected', selectedTemp)
+        this.eventBus.$emit('update:selected', this.selectedCopy)
+        this.$emit('update:selected', this.selectedCopy)
       })
       this.eventBus.$on('remove:selected', (name) => {
-        let selectedTemp = JSON.parse(JSON.stringify(this.selected))
-        const index = selectedTemp.indexOf(name)
-        selectedTemp.splice(index, 1)
-        this.eventBus.$emit('update:selected', selectedTemp)
-        this.$emit('update:selected', selectedTemp)
+        const index = this.selectedCopy.indexOf(name)
+        this.selectedCopy.splice(index, 1)
+        this.eventBus.$emit('update:selected', this.selectedCopy)
+        this.$emit('update:selected', this.selectedCopy)
       })
     }
   }
 </script>
 
 <style lang="scss" scoped>
-  $border-color: #ddd;
-  $border-radius: 4px;
+  $border-color: #56a7ac;
+  $collapse-border-radius: 10px;
+  $text-color: #2a6c6f;
   .collapse {
+    color: $text-color;
     border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border-radius: $collapse-border-radius;
   }
 </style>
