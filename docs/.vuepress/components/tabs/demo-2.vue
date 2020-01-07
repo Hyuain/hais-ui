@@ -45,11 +45,6 @@
       'u-tabs-body': TabsBody,
       'u-tabs-pane': TabsPane,
       'u-icon': Icon
-    },
-    methods: {
-      showToast() {
-        this.$toast('这是一条弹出信息')
-      }
     }
   }
 

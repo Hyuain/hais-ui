@@ -134,20 +134,23 @@
 </script>
 
 <style lang="scss" scoped>
-  $border-color: #333;
-  $border-radius: 4px;
+  $border-color: #56a7ac;
+  $popover-border-radius: 10px;
+  $text-color: #2a6c6f;
+  $box-shadow-color: rgba(42, 108, 111, 0.7);
   .popover {
     display: inline-block;vertical-align: top;position: relative;
     .trigger-wrapper {display: inline-block;}
   }
   .content-wrapper {
+    color: $text-color;
     position: absolute;
     border: 1px solid $border-color;
-    border-radius: $border-radius;
+    border-radius: $popover-border-radius;
     max-width: 20em;
     padding: .5em 1em;
     word-break: break-all;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .5));
+    filter: drop-shadow(0 1px 1px $box-shadow-color);
     background-color: white;
     &::before, &::after {content: '';display: block;border: 10px solid transparent;width: 0;height: 0;position: absolute;}
     &.position-top {

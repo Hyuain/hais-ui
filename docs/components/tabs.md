@@ -99,3 +99,39 @@ sidebarDepth: 2
 <tabs-demo-2></tabs-demo-2>
 </ClientOnly>
 
+## direction
+<font color=#56a7ac>可选</font>
+
+<br>
+
+<ClientOnly>
+<tabs-demo-3></tabs-demo-3>
+</ClientOnly>
+
+- 类型：`String`
+
+- 默认值：`horizontal`
+
+- 可接受值：`horizontal` `vertical`
+
+- 用法：
+
+```html
+<u-tabs selected="sports" direction="vertical">
+
+  <u-tabs-head>
+    <u-tabs-item name="anime">动漫</u-tabs-item>
+    <u-tabs-item name="finance">财经</u-tabs-item>
+    <u-tabs-item name="sports">体育</u-tabs-item>
+  </u-tabs-head>
+
+  <u-tabs-body>
+    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
+    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
+    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
+  </u-tabs-body>
+
+</u-tabs>
+```
+
+可以通过 `direction` 属性设置标签为横向或纵向排列。

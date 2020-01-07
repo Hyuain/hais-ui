@@ -143,6 +143,7 @@
     .close {
       padding-left: 16px;
       flex-shrink: 0;
+      cursor: pointer;
     }
     .message {
       padding: 8px 0;

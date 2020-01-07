@@ -3,108 +3,104 @@ title: 气泡卡片 - popover
 sidebarDepth: 2
 ---
 
-# 输入框
+# 气泡卡片
 
-## value
+## position
 <font color=#56a7ac>可选</font>
 
 <br>
 
 <ClientOnly>
-<toast-demo-1></toast-demo-1>
+<popover-demo-1></popover-demo-1>
 </ClientOnly>
 
 - 类型：`String`
 
-- 默认值：`undefined`
+- 默认值：`top`
+
+- 可接受值：`bottom` `top` `left` `right`
 
 - 用法：
 
 ```html
-<u-input value="请输入内容"></u-input>
+<u-popover position="bottom">
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>从下方弹出</u-button>
+</u-popover>
+
+<u-popover>
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>从上方弹出</u-button>
+</u-popover>
+
+<u-popover position="left">
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>从左侧弹出</u-button>
+</u-popover>
+
+<u-popover position="right">
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>从右侧弹出</u-button>
+</u-popover>
 ```
 
-在 `value` 属性中可以传入默认显示的值。
+注意 `popover` 的内容需要写在 `<template v-slot:content></template>` 标签中。
 
-## disabled
-<font color=#56a7ac>可选</font>
+在 `popover` 的内容中预置了手动关闭标签的方法，可以通过 `button` 等触发手动关闭标签，您需要这样写：
 
-<br>
+```html
+<u-popover position="bottom">
+  <template v-slot:content="methods">
+    <div>这是气泡卡片的内容</div>
+    <u-button @click="methods.close">点击</u-button>
+  </template>
+  <u-button>手动关闭标签示例</u-button>
+</u-popover>
+```
 
 <ClientOnly>
-<input-demo-2></input-demo-2>
+<popover-demo-2></popover-demo-2>
 </ClientOnly>
 
-- 类型：`Boolean`
-
-- 默认值：`false`
-
-- 可接受值：`true` `false`
-
-- 用法：
-
-```html
-<u-input value="不可用" disabled></u-input>
-```
-
-将输入框设置为 `disabled`。
-
-## readonly
+## trigger
 <font color=#56a7ac>可选</font>
 
 <br>
 
 <ClientOnly>
-<input-demo-3></input-demo-3>
-</ClientOnly>
-
-- 类型：`Boolean`
-
-- 默认值：`false`
-
-- 可接受值：`true` `false`
-
-- 用法：
-
-```html
-<u-input value="只读" readonly></u-input>
-```
-
-将输入框设置为 `readonly`。
-
-## error
-<font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<input-demo-4></input-demo-4>
+<popover-demo-3></popover-demo-3>
 </ClientOnly>
 
 - 类型：`String`
 
-- 默认值：`undefined`
+- 默认值：`click`
+
+- 可接受值： `click` `hover`
 
 - 用法：
 
 ```html
-<u-input error="您输入的信息不符合要求！"></u-input>
+<u-popover>
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>点击弹出</u-button>
+</u-popover>
+
+<u-popover trigger="hover">
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <u-button>悬浮弹出</u-button>
+</u-popover>
 ```
 
-可以给传入 `error` 传入错误信息，并且将输入框变为 `error` 样式。
-
-## v-model
-
-输入框组件支持 `v-model` 双向绑定。
-
-- 示例：
-
-<ClientOnly>
-<input-demo-5></input-demo-5>
-</ClientOnly>
-
-```html
-<u-input v-model="message"></u-input>
-<p>{{message}}</p>
-<u-button @click="message+=1">点我</u-button>
-```
+可以通过 `trigger` 属性设置触发 `popover` 的方式是 `click` 或者 `hover`。
