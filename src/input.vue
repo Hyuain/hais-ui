@@ -37,7 +37,17 @@
   }
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  $font-size: 14px;
+  $input-height: 32px;
+  $text-color: #2a6c6f;
+  $border-radius: 16px;
+  $border-color: #56a7ac;
+  $border-color-hover: #2a6c6f;
+  $box-shadow-color: rgba(42, 108, 111, 0.7);
+  $color-disabled: #aaaaaa;
+  $box-shadow-color-disabled: rgba(170, 170, 170, 0.7);
+  $color-error: #ff6464;
+  $box-shadow-color-error: rgba(255, 100, 100, 0.7);
   .wrapper {
     font-size: $font-size;display: inline-flex;align-items: center;
     > :not(:last-child) {margin-right: .5em;}

@@ -78,7 +78,11 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "var";
+  $toast-border-radius: 10px;
+  $toast-bg: rgba(21, 23, 29, 0.75);
+  $toast-min-height: 40px;
+  $animation-duration: .3s;
+  $font-size: 14px;
   @keyframes slide-up {
     0% {opacity: 0; transform: translateY(100%);}
     100% {opacity: 1; transform: translateY(0%);}
