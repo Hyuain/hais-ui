@@ -1,24 +1,24 @@
 import Vue from 'vue'
-import Button from './button.vue'
-import Icon from './icon.vue'
-import ButtonGroup from './button-group.vue'
-import Input from './input.vue'
-import Row from './row.vue'
-import Col from './col.vue'
-import Container from './container.vue'
-import Header from './header'
-import Content from './content'
-import Sider from './sider'
-import Footer from './footer'
-import plugin from "./plugin"
-import Tabs from './tabs'
-import TabsHead from './tabs-head'
-import TabsBody from './tabs-body'
-import TabsItem from './tabs-item'
-import TabsPane from './tabs-pane'
-import Popover from './popover'
-import Collapse from './collapse'
-import CollapseItem from './collapse-item'
+import Button from './src/button.vue'
+import Icon from './src/icon.vue'
+import ButtonGroup from './src/button-group.vue'
+import Input from './src/input.vue'
+import Row from './src/row.vue'
+import Col from './src/col.vue'
+import Container from './src/container.vue'
+import Header from './src/header'
+import Content from './src/content'
+import Sider from './src/sider'
+import Footer from './src/footer'
+import plugin from "./src/plugin"
+import Tabs from './src/tabs'
+import TabsHead from './src/tabs-head'
+import TabsBody from './src/tabs-body'
+import TabsItem from './src/tabs-item'
+import TabsPane from './src/tabs-pane'
+import Popover from './src/popover'
+import Collapse from './src/collapse'
+import CollapseItem from './src/collapse-item'
 
 
 Vue.component('hai-button', Button)
@@ -37,7 +37,7 @@ Vue.component('hai-tabs-head', TabsHead)
 Vue.component('hai-tabs-body', TabsBody)
 Vue.component('hai-tabs-item', TabsItem)
 Vue.component('hai-tabs-pane', TabsPane)
-Vue.component('u-popover', Popover)
+Vue.component('hai-popover', Popover)
 Vue.use(plugin)
 Vue.component('hai-collapse', Collapse)
 Vue.component('hai-collapse-item', CollapseItem)

@@ -1,22 +1,54 @@
-import Button from './src/button'
-import ButtonGroup from './src/button-group'
-import Icon from './src/icon'
-import Input from './src/input'
-import Col from './src/col'
-import Row from './src/row'
-import Container from './src/container'
-import Header from './src/header'
-import Content from './src/content'
-import Sider from './src/sider'
-import Footer from './src/footer'
-import plugin from "./src/plugin"
-import Tabs from './src/tabs'
-import TabsHead from './src/tabs-head'
-import TabsBody from './src/tabs-body'
-import TabsItem from './src/tabs-item'
-import TabsPane from './src/tabs-pane'
-import Popover from './src/popover'
-import Collapse from './src/collapse'
-import CollapseItem from './src/collapse-item'
+import Vue from 'vue'
+import HaiButton from './src/button'
+import HaiButtonGroup from './src/button-group'
+import HaiIcon from './src/icon'
+import HaiInput from './src/input'
+import HaiCol from './src/col'
+import HaiRow from './src/row'
+import HaiContainer from './src/container'
+import HaiHeader from './src/header'
+import HaiContent from './src/content'
+import HaiSider from './src/sider'
+import HaiFooter from './src/footer'
+import HaiPlugin from "./src/plugin"
+import HaiTabs from './src/tabs'
+import HaiTabsHead from './src/tabs-head'
+import HaiTabsBody from './src/tabs-body'
+import HaiTabsItem from './src/tabs-item'
+import HaiTabsPane from './src/tabs-pane'
+import HaiPopover from './src/popover'
+import HaiCollapse from './src/collapse'
+import HaiCollapseItem from './src/collapse-item'
 
-export {ButtonGroup, Button, Icon, Input, Col, Row, Container, Header, Content, Sider, Footer, plugin, Tabs, TabsHead, TabsBody, TabsItem, TabsPane, Popover, Collapse, CollapseItem}
+const components = {
+  HaiButton,
+  HaiButtonGroup,
+  HaiIcon,
+  HaiInput,
+  HaiCol,
+  HaiRow,
+  HaiContainer,
+  HaiHeader,
+  HaiContent,
+  HaiSider,
+  HaiFooter,
+  HaiTabs,
+  HaiTabsHead,
+  HaiTabsBody,
+  HaiTabsItem,
+  HaiTabsPane,
+  HaiPopover,
+  HaiCollapse,
+  HaiCollapseItem
+}
+
+const install = function (Vue, options = {}) {
+
+  Object.keys(components).forEach(key => {
+    Vue.component(key, components[key]);
+  });
+
+  Vue.use(HaiPlugin)
+}
+
+export default install

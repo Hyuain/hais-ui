@@ -14,12 +14,12 @@ sidebarDepth: 2
 </ClientOnly>
 
 ```html
-<u-popover>
+<hai-popover>
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>点击弹出 Popover</hai-button>
-</u-popover>
+</hai-popover>
 ```
 
 
@@ -41,33 +41,33 @@ sidebarDepth: 2
 </ClientOnly>
 
 ```html
-<u-popover position="bottom">
+<hai-popover position="bottom">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>从下方弹出</hai-button>
-</u-popover>
+</hai-popover>
 
-<u-popover>
+<hai-popover>
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>从上方弹出</hai-button>
-</u-popover>
+</hai-popover>
 
-<u-popover position="left">
+<hai-popover position="left">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>从左侧弹出</hai-button>
-</u-popover>
+</hai-popover>
 
-<u-popover position="right">
+<hai-popover position="right">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>从右侧弹出</hai-button>
-</u-popover>
+</hai-popover>
 ```
 
 注意 `popover` 的内容需要写在 `<template v-slot:content></template>` 标签中。
@@ -75,13 +75,13 @@ sidebarDepth: 2
 在 `popover` 的内容中预置了手动关闭标签的方法，可以通过 `button` 等触发手动关闭标签，您需要这样写：
 
 ```html
-<u-popover position="bottom">
+<hai-popover position="bottom">
   <template v-slot:content="methods">
     <div>这是气泡卡片的内容</div>
     <hai-button @click="methods.close">点击</hai-button>
   </template>
   <hai-button>手动关闭标签示例</hai-button>
-</u-popover>
+</hai-popover>
 ```
 
 <ClientOnly>
@@ -107,19 +107,19 @@ sidebarDepth: 2
 </ClientOnly>
 
 ```html
-<u-popover>
+<hai-popover>
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>点击弹出</hai-button>
-</u-popover>
+</hai-popover>
 
-<u-popover trigger="hover">
+<hai-popover trigger="hover">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
   <hai-button>悬浮弹出</hai-button>
-</u-popover>
+</hai-popover>
 ```
 
 可以通过 `trigger` 属性设置触发 `popover` 的方式是 `click` 或者 `hover`。

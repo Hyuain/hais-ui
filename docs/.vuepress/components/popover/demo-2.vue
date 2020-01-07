@@ -1,6 +1,6 @@
 <template>
   <div class="demo-wrapper">
-    <u-popover position="bottom">
+    <hai-popover position="bottom">
       <template v-slot:content="{close}">
         <div>这是气泡卡片的内容</div>
         <div class="button-wrapper">
@@ -8,7 +8,7 @@
         </div>
       </template>
       <hai-button>手动关闭标签示例</hai-button>
-    </u-popover>
+    </hai-popover>
   </div>
 </template>
 
@@ -19,7 +19,7 @@
 
   export default {
     components: {
-      'u-popover': Popover,
+      'hai-popover': Popover,
       'hai-button': Button
     }
   }

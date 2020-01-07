@@ -18,7 +18,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  @import "var";
+  $border-radius: 16px;
   .button-group {
     display: inline-flex;
     vertical-align: middle;

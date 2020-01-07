@@ -15,14 +15,6 @@ sidebarDepth: 2
 <toast-demo-1></toast-demo-1>
 </ClientOnly>
 
-`toast` 组件是以插件的形式提供的，您需要先在 `JavaScript` 文件中加入以下内容：
-
-```js
-Vue.use(plugin)
-```
-
-然后就可以以函数的形式调用 `toast` 组件了。
-
 ```html
 <hai-button @click="showToast">弹出信息</hai-button>
 ```

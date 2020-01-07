@@ -1,18 +1,18 @@
 <template>
   <div class="demo-wrapper">
-    <u-popover>
+    <hai-popover>
       <template v-slot:content>
         <div>这是气泡卡片的内容</div>
       </template>
       <hai-button>点击弹出</hai-button>
-    </u-popover>
+    </hai-popover>
 
-    <u-popover trigger="hover">
+    <hai-popover trigger="hover">
       <template v-slot:content>
         <div>这是气泡卡片的内容</div>
       </template>
       <hai-button>悬浮弹出</hai-button>
-    </u-popover>
+    </hai-popover>
   </div>
 </template>
 
@@ -23,7 +23,7 @@
 
   export default {
     components: {
-      'u-popover': Popover,
+      'hai-popover': Popover,
       'hai-button': Button
     }
   }

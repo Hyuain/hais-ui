@@ -1,11 +1,11 @@
 <template>
   <div class="demo-wrapper">
-    <u-popover>
+    <hai-popover>
       <template v-slot:content>
         <div>这是气泡卡片的内容</div>
       </template>
       <hai-button>点击弹出 Popover</hai-button>
-    </u-popover>
+    </hai-popover>
   </div>
 </template>
 
@@ -14,7 +14,7 @@
   import Button from "../../../../src/button"
   export default {
     components: {
-      'u-popover': Popover,
+      'hai-popover': Popover,
       'hai-button': Button
     }
   }
