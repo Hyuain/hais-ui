@@ -5,9 +5,11 @@ sidebarDepth: 2
 
 # 弹出信息
 
+
+
 ## 简单示例
 
-您可以在需要的地方编写函数来调用 `toast` 组件，比如在点击按钮时触发。
+您可以在需要的地方编写函数来调用 `toast` 组件，比如在点击按钮时触发，所有的弹出信息在同一时间只会在页面上存在一个。
 
 <ClientOnly>
 <toast-demo-1></toast-demo-1>
@@ -34,6 +36,9 @@ new Vue({
   }
 }).$mount('#app')
 ```
+
+
+
 
 ## this.$toast()
 
@@ -63,18 +68,24 @@ showToast2() {
 }
 ```
 
-可以在 `message` 中传入想要在 `toast` 中显示的内容
+可以在 `message` 中传入想要在 `toast` 中显示的内容，该参数接受 `String` 和 `Html` 两种格式的内容。
 
 ::: warning 注意
-如果想要在 `message` 中使用 `Html` 内容，需要先开启 `enableHtml` 选项。
+如果想要在 `message` 中使用 `Html` 内容，需要先开启 `enableHtml` 选项，该选项默认为关闭状态。
 :::
+
+
+
 
 ## options
 <font color=#56a7ac>可选</font>
 
 - 类型：`Object`
 
-`options` 是一个对象，包含以下这些属性，他们都是可选的：
+`options` 是 `$toast.()` 接受的第二个参数，他是一个对象，并且包含以下这些属性，这些属性都是可选的：
+
+
+
 
 ### autoClose
 
@@ -84,7 +95,7 @@ showToast2() {
 
 - 可接受值：`false` `Number`
 
-- 示例：
+- 用法示例：
 
 ```js
 this.$toast('Hais Teatime', {
@@ -92,17 +103,20 @@ this.$toast('Hais Teatime', {
 })
 ```
 
-若 `autoClose` 的值为 `false`，则弹出信息不会自动关闭，否则就传入一个数字，代表其自动关闭的秒数；若不写 `autoClose` 属性，则默认 5 秒后自动关闭。
+若 `autoClose` 的值为 `false`，则弹出信息不会自动关闭；否则需要传入一个数字，代表其自动关闭的秒数；若不写 `autoClose` 属性，则默认 5 秒后自动关闭。
+
+
+
 
 ### closeButton
 
 - 类型：`Object`
 
+- 用法示例：
+
 <ClientOnly>
 <toast-demo-3></toast-demo-3>
 </ClientOnly>
-
-- 示例：
 
 ```js
 this.$toast('有关闭按钮的弹出信息', {
@@ -121,6 +135,9 @@ this.$toast('有关闭按钮的弹出信息', {
 
 其中 `text` 属性用来控制关闭按钮显示的文字，初次之外还可以传入一个 `callback`，当用户点击关闭时调用，并会将这个 `toast` 组件作为参数传入。
 
+
+
+
 ### position
 
 - 类型：`String`
@@ -129,7 +146,7 @@ this.$toast('有关闭按钮的弹出信息', {
 
 - 可接受值：`top` `bottom` `middle`
 
-- 示例：
+- 用法示例：
 
 <ClientOnly>
 <toast-demo-4></toast-demo-4>
@@ -164,6 +181,10 @@ showToast(position) {
 }
 ```
 
+`position` 可以控制弹出信息的弹出位置。
+
+
+
 ### enableHtml
 
 - 类型：`Boolean`
@@ -172,7 +193,7 @@ showToast(position) {
 
 - 可接受值：`true` `false`
 
-- 示例：
+- 用法示例：
 
 <ClientOnly>
 <toast-demo-5></toast-demo-5>
@@ -190,3 +211,5 @@ showToast2() {
   })
 }
 ```
+
+出于安全性考虑，默认是禁用 `enableHtml` 的，如果需要使用，请手动开启。

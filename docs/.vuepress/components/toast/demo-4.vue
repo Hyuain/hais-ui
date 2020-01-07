@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-wrapper">
     <hai-button @click="showToast1">从顶部弹出</hai-button>
     <hai-button @click="showToast2">在中间弹出</hai-button>
     <hai-button @click="showToast3">从下方弹出</hai-button>
@@ -10,6 +10,7 @@
   import Vue from 'vue'
   import Button from '../../../../src/button'
   import plugin from '../../../../src/plugin'
+
   Vue.use(plugin)
   export default {
     components: {
@@ -40,3 +41,18 @@
   }
 
 </script>
+
+<style scoped>
+  @media (max-width: 419px) {
+    .demo-wrapper {
+      margin: 0.85rem -1.5rem;
+      border-radius: 0
+    }
+  }
+
+  .demo-wrapper {
+    background: rgba(234, 236, 239, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+  }
+</style>
