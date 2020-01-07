@@ -45,15 +45,12 @@
           console.warn(`<u-tabs> 的子组件应该是 <u-tabs-head> 和 <u-tabs-nav>，但是你没有写子组件`)
         }
       },
-      selectTab() {
+      selectDefaultTab() {
         this.$children.forEach(vm => {
           if (vm.$options.name === 'HaiTabsHead') {
             vm.$children.forEach(child => {
               if (child.$options.name === 'HaiTabsItem' && child.name === this.selected) {
                 this.eventBus.$emit('update:selected', this.selected, child)
-                this.eventBus.$on('update:selected', () => {
-                  this.$emit('update:selected', this.selected)
-                })
               }
             })
           }
@@ -62,7 +59,10 @@
     },
     mounted() {
       this.checkChildren()
-      this.selectTab()
+      this.selectDefaultTab()
+      this.eventBus.$on('update:selected', (name) => {
+        this.$emit('update:selected', name)
+      })
     }
   }
 </script>

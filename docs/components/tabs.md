@@ -98,38 +98,3 @@ sidebarDepth: 2
 <ClientOnly>
 <tabs-demo-2></tabs-demo-2>
 </ClientOnly>
-
-## selected
-<font color=#ff6464>必须</font>
-
-- 类型：`String`
-
-- 默认值：`undefined`
-
-- 用法：
-
-```html
-<u-tabs selected="sports">
-
-  <u-tabs-head>
-    <u-tabs-item name="anime">动漫</u-tabs-item>
-    <u-tabs-item name="finance">财经</u-tabs-item>
-    <u-tabs-item name="sports">体育</u-tabs-item>
-  </u-tabs-head>
-
-  <u-tabs-body>
-    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-  </u-tabs-body>
-
-</u-tabs>
-```
-给 `tabs` 一个 `selected` 属性，其值为默认选中的 `tabs-item` 和 `tabs-pane` 的 `name`。
-
-`selected` 还支持 `.sync` 语法。
-
-
-<ClientOnly>
-<tabs-demo-2></tabs-demo-2>
-</ClientOnly>
