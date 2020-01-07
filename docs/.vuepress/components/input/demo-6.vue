@@ -1,6 +1,6 @@
 <template>
   <div class="demo-wrapper">
-    <hai-input value="不可用" disabled></hai-input>
+    <hai-input></hai-input>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
   import Input from "../../../../src/input"
   export default {
     components: {
-      'hai-input': Input
+      'hai-input': Input,
     }
   }
 </script>

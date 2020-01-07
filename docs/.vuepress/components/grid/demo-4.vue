@@ -1,16 +1,16 @@
 <template>
   <div>
-    <u-row id="container" auto gutter="20">
-      <u-col id="box1">
+    <hai-row id="container" auto gutter="20">
+      <hai-col id="box1">
         <div id="item1"></div>
-      </u-col>
-      <u-col id="box2">
+      </hai-col>
+      <hai-col id="box2">
         <div id="item2"></div>
-      </u-col>
-      <u-col id="box3">
+      </hai-col>
+      <hai-col id="box3">
         <div id="item3"></div>
-      </u-col>
-    </u-row>
+      </hai-col>
+    </hai-row>
   </div>
 </template>
 
@@ -20,8 +20,8 @@
 
   export default {
     components: {
-      'u-row': Row,
-      'u-col': Col
+      'hai-row': Row,
+      'hai-col': Col
     }
   }
 </script>

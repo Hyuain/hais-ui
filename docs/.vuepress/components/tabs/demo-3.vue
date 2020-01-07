@@ -1,20 +1,20 @@
 <template>
   <div>
-    <u-tabs selected="sports" direction="vertical">
+    <hai-tabs selected="sports" direction="vertical">
 
-      <u-tabs-head>
-        <u-tabs-item name="anime">动漫</u-tabs-item>
-        <u-tabs-item name="finance">财经</u-tabs-item>
-        <u-tabs-item name="sports">体育</u-tabs-item>
-      </u-tabs-head>
+      <hai-tabs-head>
+        <hai-tabs-item name="anime">动漫</hai-tabs-item>
+        <hai-tabs-item name="finance">财经</hai-tabs-item>
+        <hai-tabs-item name="sports">体育</hai-tabs-item>
+      </hai-tabs-head>
 
-      <u-tabs-body>
-        <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-        <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-        <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-      </u-tabs-body>
+      <hai-tabs-body>
+        <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+        <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+        <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+      </hai-tabs-body>
 
-    </u-tabs>
+    </hai-tabs>
   </div>
 </template>
 
@@ -29,13 +29,13 @@
 
   export default {
     components: {
-      'u-button': Button,
-      'u-tabs': Tabs,
-      'u-tabs-head': TabsHead,
-      'u-tabs-item': TabsItem,
-      'u-tabs-body': TabsBody,
-      'u-tabs-pane': TabsPane,
-      'u-icon': Icon
+      'hai-button': Button,
+      'hai-tabs': Tabs,
+      'hai-tabs-head': TabsHead,
+      'hai-tabs-item': TabsItem,
+      'hai-tabs-body': TabsBody,
+      'hai-tabs-pane': TabsPane,
+      'hai-icon': Icon
     }
   }
 

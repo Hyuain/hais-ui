@@ -49,9 +49,9 @@
     export default {
       name: 'app',
       components: {
-        'u-icon': Icon,
-        'u-button': Button,
-        'u-button-group': ButtonGroup
+        'hai-icon': Icon,
+        'hai-button': Button,
+        'hai-button-group': ButtonGroup
       }
     }
     ```

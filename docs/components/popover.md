@@ -27,28 +27,28 @@ sidebarDepth: 2
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>从下方弹出</u-button>
+  <hai-button>从下方弹出</hai-button>
 </u-popover>
 
 <u-popover>
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>从上方弹出</u-button>
+  <hai-button>从上方弹出</hai-button>
 </u-popover>
 
 <u-popover position="left">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>从左侧弹出</u-button>
+  <hai-button>从左侧弹出</hai-button>
 </u-popover>
 
 <u-popover position="right">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>从右侧弹出</u-button>
+  <hai-button>从右侧弹出</hai-button>
 </u-popover>
 ```
 
@@ -60,9 +60,9 @@ sidebarDepth: 2
 <u-popover position="bottom">
   <template v-slot:content="methods">
     <div>这是气泡卡片的内容</div>
-    <u-button @click="methods.close">点击</u-button>
+    <hai-button @click="methods.close">点击</hai-button>
   </template>
-  <u-button>手动关闭标签示例</u-button>
+  <hai-button>手动关闭标签示例</hai-button>
 </u-popover>
 ```
 
@@ -92,14 +92,14 @@ sidebarDepth: 2
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>点击弹出</u-button>
+  <hai-button>点击弹出</hai-button>
 </u-popover>
 
 <u-popover trigger="hover">
   <template v-slot:content>
     <div>这是气泡卡片的内容</div>
   </template>
-  <u-button>悬浮弹出</u-button>
+  <hai-button>悬浮弹出</hai-button>
 </u-popover>
 ```
 

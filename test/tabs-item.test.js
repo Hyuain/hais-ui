@@ -6,11 +6,11 @@ import TabsBody from '../src/tabs-body'
 import TabsItem from '../src/tabs-item'
 import TabsPane from '../src/tabs-pane'
 
-Vue.component('u-tabs', Tabs)
-Vue.component('u-tabs-head', TabsHead)
-Vue.component('u-tabs-body', TabsBody)
-Vue.component('u-tabs-item', TabsItem)
-Vue.component('u-tabs-pane', TabsPane)
+Vue.component('hai-tabs', Tabs)
+Vue.component('hai-tabs-head', TabsHead)
+Vue.component('hai-tabs-body', TabsBody)
+Vue.component('hai-tabs-item', TabsItem)
+Vue.component('hai-tabs-pane', TabsPane)
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -25,14 +25,14 @@ describe('TabsItem', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-tabs selected="anime">
-        <u-tabs-head>
-          <u-tabs-item name="anime"> 动漫 </u-tabs-item>
-        </u-tabs-head>
-        <u-tabs-body>
-          <u-tabs-pane name="anime"> 动漫相关资讯 </u-tabs-pane>
-        </u-tabs-body>
-      </u-tabs>
+      <hai-tabs selected="anime">
+        <hai-tabs-head>
+          <hai-tabs-item name="anime"> 动漫 </hai-tabs-item>
+        </hai-tabs-head>
+        <hai-tabs-body>
+          <hai-tabs-pane name="anime"> 动漫相关资讯 </hai-tabs-pane>
+        </hai-tabs-body>
+      </hai-tabs>
     `
     const vm = new Vue({
       el: div
@@ -57,16 +57,16 @@ describe('TabsItem', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-tabs selected="anime">
-        <u-tabs-head>
-          <u-tabs-item name="anime" disabled> 动漫 </u-tabs-item>
-          <u-tabs-item name="finance"> 经济 </u-tabs-item>
-        </u-tabs-head>
-        <u-tabs-body>
-          <u-tabs-pane name="anime"> 动漫相关资讯 </u-tabs-pane>
-          <u-tabs-pane name="finance"> 经济相关资讯 </u-tabs-pane>
-        </u-tabs-body>
-      </u-tabs>
+      <hai-tabs selected="anime">
+        <hai-tabs-head>
+          <hai-tabs-item name="anime" disabled> 动漫 </hai-tabs-item>
+          <hai-tabs-item name="finance"> 经济 </hai-tabs-item>
+        </hai-tabs-head>
+        <hai-tabs-body>
+          <hai-tabs-pane name="anime"> 动漫相关资讯 </hai-tabs-pane>
+          <hai-tabs-pane name="finance"> 经济相关资讯 </hai-tabs-pane>
+        </hai-tabs-body>
+      </hai-tabs>
     `
     const vm = new Vue({
       el: div

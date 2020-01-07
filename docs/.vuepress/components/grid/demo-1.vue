@@ -1,10 +1,10 @@
 <template>
   <div>
-    <u-row id="container" auto>
-      <u-col id="item1"></u-col>
-      <u-col id="item2"></u-col>
-      <u-col id="item3"></u-col>
-    </u-row>
+    <hai-row id="container" auto>
+      <hai-col id="item1"></hai-col>
+      <hai-col id="item2"></hai-col>
+      <hai-col id="item3"></hai-col>
+    </hai-row>
   </div>
 </template>
 
@@ -13,8 +13,8 @@
   import Col from "../../../../src/col"
   export default {
     components: {
-      'u-row': Row,
-      'u-col': Col
+      'hai-row': Row,
+      'hai-col': Col
     }
   }
 </script>

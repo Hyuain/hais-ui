@@ -11,7 +11,7 @@
         let nodeName = node.nodeName.toLowerCase()
         if (nodeName !== 'button') {
           console && console.warn &&
-          console.warn(`<u-button-group> 的子元素应该为 <u-button>，而不能是 <${nodeName}>`)
+          console.warn(`<hai-button-group> 的子元素应该为 <hai-button>，而不能是 <${nodeName}>`)
         }
       }
     }

@@ -78,7 +78,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $toast-border-radius: 10px;
+  $toast-border-radius: 12px;
   $toast-bg: rgba(21, 23, 29, 0.75);
   $toast-min-height: 40px;
   $animation-duration: .3s;

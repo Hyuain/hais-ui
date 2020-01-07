@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <u-button icon="settings" loading>按钮</u-button>
-    <u-button icon="settings" :loading="state" @click="state = !state">按钮</u-button>
+  <div class="demo-wrapper">
+    <hai-button icon="settings" loading>按钮</hai-button>
+    <hai-button icon="settings" :loading="state" @click="state = !state">按钮</hai-button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 
   export default {
     components: {
-      'u-button': Button
+      'hai-button': Button
     },
     data() {
       return {
@@ -21,3 +21,17 @@
   }
 
 </script>
+
+<style scoped>
+  @media(max-width: 419px){
+    .demo-wrapper{
+      margin: 0.85rem -1.5rem;
+      border-radius: 0
+    }
+  }
+  .demo-wrapper{
+    background: rgba(234, 236, 239, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+  }
+</style>

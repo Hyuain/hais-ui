@@ -1,16 +1,19 @@
 <template>
   <div class="demo-wrapper">
-    <hai-input value="不可用" disabled></hai-input>
+    <hai-button>按钮</hai-button>
   </div>
 </template>
 
 <script>
-  import Input from "../../../../src/input"
+
+  import Button from "../../../../src/button"
+
   export default {
     components: {
-      'hai-input': Input
+      'hai-button': Button
     }
   }
+
 </script>
 
 <style scoped>

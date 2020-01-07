@@ -1,7 +1,7 @@
 <template>
   <div>
-    <u-button @click="showToast1">不使用 HTML</u-button>
-    <u-button @click="showToast2">使用 HTML</u-button>
+    <hai-button @click="showToast1">不使用 HTML</hai-button>
+    <hai-button @click="showToast2">使用 HTML</hai-button>
   </div>
 </template>
 
@@ -12,7 +12,7 @@
   Vue.use(plugin)
   export default {
     components: {
-      'u-button': Button
+      'hai-button': Button
     },
     methods: {
       showToast1() {

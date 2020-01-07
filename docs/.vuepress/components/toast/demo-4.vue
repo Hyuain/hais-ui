@@ -1,8 +1,8 @@
 <template>
   <div>
-    <u-button @click="showToast1">从顶部弹出</u-button>
-    <u-button @click="showToast2">在中间弹出</u-button>
-    <u-button @click="showToast3">从下方弹出</u-button>
+    <hai-button @click="showToast1">从顶部弹出</hai-button>
+    <hai-button @click="showToast2">在中间弹出</hai-button>
+    <hai-button @click="showToast3">从下方弹出</hai-button>
   </div>
 </template>
 
@@ -13,7 +13,7 @@
   Vue.use(plugin)
   export default {
     components: {
-      'u-button': Button
+      'hai-button': Button
     },
     methods: {
       showToast1() {

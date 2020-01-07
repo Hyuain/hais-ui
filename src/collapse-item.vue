@@ -46,7 +46,7 @@
 </script>
 
 <style lang="scss" scoped>
-  $collapse-border-radius: 10px;
+  $collapse-border-radius: 12px;
   $border-color: #56a7ac;
   .collapse-item {
     > .title {

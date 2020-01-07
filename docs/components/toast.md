@@ -22,7 +22,7 @@ Vue.use(plugin)
 然后就可以以函数的形式调用 `toast` 组件了。
 
 ```html
-<u-button @click="showToast">弹出信息</u-button>
+<hai-button @click="showToast">弹出信息</hai-button>
 ```
 
 ```js
@@ -134,9 +134,9 @@ this.$toast('有关闭按钮的弹出信息', {
 </ClientOnly>
 
 ```html
-<u-button @click="showToast1">从顶部弹出</u-button>
-<u-button @click="showToast2">在中间弹出</u-button>
-<u-button @click="showToast3">从下方弹出</u-button>
+<hai-button @click="showToast1">从顶部弹出</hai-button>
+<hai-button @click="showToast2">在中间弹出</hai-button>
+<hai-button @click="showToast3">从下方弹出</hai-button>
 ```
 
 ```js

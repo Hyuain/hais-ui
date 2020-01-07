@@ -1,6 +1,6 @@
 <template>
   <div>
-    <u-button @click="showToast">弹出信息</u-button>
+    <hai-button @click="showToast">弹出信息</hai-button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
   Vue.use(plugin)
   export default {
     components: {
-      'u-button': Button
+      'hai-button': Button
     },
     methods: {
       showToast() {

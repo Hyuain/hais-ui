@@ -1,7 +1,7 @@
 <template>
   <button class="button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
-    <u-icon class="icon" v-if="icon && !loading" :name="icon"></u-icon>
-    <u-icon class="icon loading" name="loading" v-if="loading"></u-icon>
+    <hai-icon class="icon" v-if="icon && !loading" :name="icon"></hai-icon>
+    <hai-icon class="icon loading" name="loading" v-if="loading"></hai-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -13,7 +13,7 @@
   export default {
     name: 'HaiButton',
     components: {
-      "u-icon": Icon
+      "hai-icon": Icon
     },
     props: {
       icon: {

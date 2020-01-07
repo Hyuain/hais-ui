@@ -18,24 +18,24 @@ sidebarDepth: 2
 <br>
 
 ```html
-<u-tabs selected="sports">
+<hai-tabs selected="sports">
 
-  <u-tabs-head>
+  <hai-tabs-head>
     <template slot="actions">
-      <u-button>设置</u-button>
+      <hai-button>设置</hai-button>
     </template>
-    <u-tabs-item name="anime"><u-icon name="likes"></u-icon> 动漫</u-tabs-item>
-    <u-tabs-item name="finance" disabled>财经</u-tabs-item>
-    <u-tabs-item name="sports">体育</u-tabs-item>
-  </u-tabs-head>
+    <hai-tabs-item name="anime"><hai-icon name="likes"></hai-icon> 动漫</hai-tabs-item>
+    <hai-tabs-item name="finance" disabled>财经</hai-tabs-item>
+    <hai-tabs-item name="sports">体育</hai-tabs-item>
+  </hai-tabs-head>
 
-  <u-tabs-body>
-    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-  </u-tabs-body>
+  <hai-tabs-body>
+    <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+  </hai-tabs-body>
 
-</u-tabs>
+</hai-tabs>
 ```
 
 ## name
@@ -48,17 +48,17 @@ sidebarDepth: 2
 - 用法：
 
 ```html
-<u-tabs-head>
-  <u-tabs-item name="anime">动漫</u-tabs-item>
-  <u-tabs-item name="finance">财经</u-tabs-item>
-  <u-tabs-item name="sports">体育</u-tabs-item>
-</u-tabs-head>
+<hai-tabs-head>
+  <hai-tabs-item name="anime">动漫</hai-tabs-item>
+  <hai-tabs-item name="finance">财经</hai-tabs-item>
+  <hai-tabs-item name="sports">体育</hai-tabs-item>
+</hai-tabs-head>
 
-<u-tabs-body>
-  <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-  <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-  <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-</u-tabs-body>
+<hai-tabs-body>
+  <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+  <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+  <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+</hai-tabs-body>
 ```
 ::: warning 注意
 每个 `tabs-item` 和 `tabs-pane` 都必须接受一个 `name` 属性，且 `tabs-item` 与其对应的 `tabs-pane` 需要拥有相同的 `name`。
@@ -74,30 +74,49 @@ sidebarDepth: 2
 - 用法：
 
 ```html
-<u-tabs selected="sports">
+<hai-tabs selected="sports">
 
-  <u-tabs-head>
-    <u-tabs-item name="anime">动漫</u-tabs-item>
-    <u-tabs-item name="finance">财经</u-tabs-item>
-    <u-tabs-item name="sports">体育</u-tabs-item>
-  </u-tabs-head>
+  <hai-tabs-head>
+    <hai-tabs-item name="anime">动漫</hai-tabs-item>
+    <hai-tabs-item name="finance">财经</hai-tabs-item>
+    <hai-tabs-item name="sports">体育</hai-tabs-item>
+  </hai-tabs-head>
 
-  <u-tabs-body>
-    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-  </u-tabs-body>
+  <hai-tabs-body>
+    <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+  </hai-tabs-body>
 
-</u-tabs>
+</hai-tabs>
 ```
 给 `tabs` 一个 `selected` 属性，其值为默认选中的 `tabs-item` 和 `tabs-pane` 的 `name`。
 
 `selected` 还支持 `.sync` 语法。
 
-
 <ClientOnly>
 <tabs-demo-2></tabs-demo-2>
 </ClientOnly>
+
+```html
+<hai-tabs :selected.sync="selectedTab">
+
+  <hai-tabs-head>
+    <hai-tabs-item name="anime">动漫</hai-tabs-item>
+    <hai-tabs-item name="finance">财经</hai-tabs-item>
+    <hai-tabs-item name="sports">体育</hai-tabs-item>
+  </hai-tabs-head>
+
+  <hai-tabs-body>
+    <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+  </hai-tabs-body>
+
+</hai-tabs>
+
+selectedTab: {{selectedTab}}
+```
 
 ## direction
 <font color=#56a7ac>可选</font>
@@ -117,21 +136,21 @@ sidebarDepth: 2
 - 用法：
 
 ```html
-<u-tabs selected="sports" direction="vertical">
+<hai-tabs selected="sports" direction="vertical">
 
-  <u-tabs-head>
-    <u-tabs-item name="anime">动漫</u-tabs-item>
-    <u-tabs-item name="finance">财经</u-tabs-item>
-    <u-tabs-item name="sports">体育</u-tabs-item>
-  </u-tabs-head>
+  <hai-tabs-head>
+    <hai-tabs-item name="anime">动漫</hai-tabs-item>
+    <hai-tabs-item name="finance">财经</hai-tabs-item>
+    <hai-tabs-item name="sports">体育</hai-tabs-item>
+  </hai-tabs-head>
 
-  <u-tabs-body>
-    <u-tabs-pane name="anime">动漫相关资讯</u-tabs-pane>
-    <u-tabs-pane name="finance">财经相关资讯</u-tabs-pane>
-    <u-tabs-pane name="sports">体育相关资讯</u-tabs-pane>
-  </u-tabs-body>
+  <hai-tabs-body>
+    <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+    <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+  </hai-tabs-body>
 
-</u-tabs>
+</hai-tabs>
 ```
 
 可以通过 `direction` 属性设置标签为横向或纵向排列。

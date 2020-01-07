@@ -14,14 +14,14 @@ sidebarDepth: 2
 </ClientOnly>
 
 ```html
-<u-container>
-  <u-sider>sider</u-sider>
-  <u-container>
-    <u-header>header</u-header>
-    <u-content>content</u-content>
-    <u-footer>footer</u-footer>
-  </u-container>
-</u-container>
+<hai-container>
+  <hai-sider>sider</hai-sider>
+  <hai-container>
+    <hai-header>header</hai-header>
+    <hai-content>content</hai-content>
+    <hai-footer>footer</hai-footer>
+  </hai-container>
+</hai-container>
 ```
 ```css
   .container {

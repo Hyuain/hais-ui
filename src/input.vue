@@ -50,9 +50,11 @@
   $box-shadow-color-error: rgba(255, 100, 100, 0.7);
   .wrapper {
     font-size: $font-size;display: inline-flex;align-items: center;
+    height: $input-height;
+    vertical-align: middle;
     > :not(:last-child) {margin-right: .5em;}
     > input {
-      height: $input-height;padding: 0 8px;font-size: inherit;color: $text-color;
+      height: $input-height - 2px;padding: 0 8px;font-size: inherit;color: $text-color;
       border: 1px solid $border-color;border-radius: $border-radius;
       &:hover {border-color: $border-color-hover;}
       &:focus {box-shadow: inset 0 1px 1px $box-shadow-color;outline: none;}

@@ -1,5 +1,5 @@
 <template>
-  <svg class="u-icon" aria-hidden="true">
+  <svg class="hai-icon" aria-hidden="true">
     <use :xlink:href="`#icon-${name}`"/>
   </svg>
 </template>
@@ -12,7 +12,7 @@
   };
 </script>
 <style lang="scss" scoped>
-  .u-icon {
+  .hai-icon {
     width: 1em;
     height: 1em;
     vertical-align: -0.15rem;

@@ -1,19 +1,19 @@
 <template>
   <div>
-    <u-row id="container">
-      <u-col id="item1" span="24"
+    <hai-row id="container">
+      <hai-col id="item1" span="24"
              :pad="{span:8}"
              :narrow-pc="{span:6}"
              :pc="{span:4}"
              :wide-pc="{span:2}"
-      ></u-col>
-      <u-col id="item2" span="24"
+      ></hai-col>
+      <hai-col id="item2" span="24"
              :pad="{span:15, offset:1}"
              :narrow-pc="{span:17,offset:1}"
              :pc="{span:18,offset:2}"
              :wide-pc="{span:19, offset:3}"
-      ></u-col>
-    </u-row>
+      ></hai-col>
+    </hai-row>
   </div>
 </template>
 
@@ -23,8 +23,8 @@
 
   export default {
     components: {
-      'u-row': Row,
-      'u-col': Col
+      'hai-row': Row,
+      'hai-col': Col
     }
   }
 </script>

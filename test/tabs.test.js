@@ -6,11 +6,11 @@ import TabsBody from '../src/tabs-body'
 import TabsItem from '../src/tabs-item'
 import TabsPane from '../src/tabs-pane'
 
-Vue.component('u-tabs', Tabs)
-Vue.component('u-tabs-head', TabsHead)
-Vue.component('u-tabs-body', TabsBody)
-Vue.component('u-tabs-item', TabsItem)
-Vue.component('u-tabs-pane', TabsPane)
+Vue.component('hai-tabs', Tabs)
+Vue.component('hai-tabs-head', TabsHead)
+Vue.component('hai-tabs-body', TabsBody)
+Vue.component('hai-tabs-item', TabsItem)
+Vue.component('hai-tabs-pane', TabsPane)
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -25,18 +25,18 @@ describe('Tabs', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-tabs selected="finance">
-        <u-tabs-head>
-          <u-tabs-item name="anime"> 动漫 </u-tabs-item>
-          <u-tabs-item name="finance"> 财经 </u-tabs-item>
-          <u-tabs-item name="sports"> 体育 </u-tabs-item>
-        </u-tabs-head>
-        <u-tabs-body>
-          <u-tabs-pane name="anime"> 动漫相关资讯 </u-tabs-pane>
-          <u-tabs-pane name="finance"> 财经相关资讯 </u-tabs-pane>
-          <u-tabs-pane name="sports"> 体育相关资讯 </u-tabs-pane>
-        </u-tabs-body>
-      </u-tabs>
+      <hai-tabs selected="finance">
+        <hai-tabs-head>
+          <hai-tabs-item name="anime"> 动漫 </hai-tabs-item>
+          <hai-tabs-item name="finance"> 财经 </hai-tabs-item>
+          <hai-tabs-item name="sports"> 体育 </hai-tabs-item>
+        </hai-tabs-head>
+        <hai-tabs-body>
+          <hai-tabs-pane name="anime"> 动漫相关资讯 </hai-tabs-pane>
+          <hai-tabs-pane name="finance"> 财经相关资讯 </hai-tabs-pane>
+          <hai-tabs-pane name="sports"> 体育相关资讯 </hai-tabs-pane>
+        </hai-tabs-body>
+      </hai-tabs>
     `
     const vm = new Vue({
       el: div
@@ -53,18 +53,18 @@ describe('Tabs', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-tabs selected="finance" direction="vertical">
-        <u-tabs-head>
-          <u-tabs-item name="anime"> 动漫 </u-tabs-item>
-          <u-tabs-item name="finance"> 财经 </u-tabs-item>
-          <u-tabs-item name="sports"> 体育 </u-tabs-item>
-        </u-tabs-head>
-        <u-tabs-body>
-          <u-tabs-pane name="anime"> 动漫相关资讯 </u-tabs-pane>
-          <u-tabs-pane name="finance"> 财经相关资讯 </u-tabs-pane>
-          <u-tabs-pane name="sports"> 体育相关资讯 </u-tabs-pane>
-        </u-tabs-body>
-      </u-tabs>
+      <hai-tabs selected="finance" direction="vertical">
+        <hai-tabs-head>
+          <hai-tabs-item name="anime"> 动漫 </hai-tabs-item>
+          <hai-tabs-item name="finance"> 财经 </hai-tabs-item>
+          <hai-tabs-item name="sports"> 体育 </hai-tabs-item>
+        </hai-tabs-head>
+        <hai-tabs-body>
+          <hai-tabs-pane name="anime"> 动漫相关资讯 </hai-tabs-pane>
+          <hai-tabs-pane name="finance"> 财经相关资讯 </hai-tabs-pane>
+          <hai-tabs-pane name="sports"> 体育相关资讯 </hai-tabs-pane>
+        </hai-tabs-body>
+      </hai-tabs>
     `
     const vm = new Vue({
       el: div

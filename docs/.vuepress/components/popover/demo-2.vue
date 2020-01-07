@@ -4,10 +4,10 @@
       <template v-slot:content="{close}">
         <div>这是气泡卡片的内容</div>
         <div class="button-wrapper">
-          <u-button @click="close" class="button">点击关闭</u-button>
+          <hai-button @click="close" class="button">点击关闭</hai-button>
         </div>
       </template>
-      <u-button>手动关闭标签示例</u-button>
+      <hai-button>手动关闭标签示例</hai-button>
     </u-popover>
   </div>
 </template>
@@ -20,7 +20,7 @@
   export default {
     components: {
       'u-popover': Popover,
-      'u-button': Button
+      'hai-button': Button
     }
   }
 

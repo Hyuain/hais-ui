@@ -135,7 +135,7 @@
 
 <style lang="scss" scoped>
   $border-color: #56a7ac;
-  $popover-border-radius: 10px;
+  $popover-border-radius: 12px;
   $text-color: #2a6c6f;
   $box-shadow-color: rgba(42, 108, 111, 0.7);
   .popover {

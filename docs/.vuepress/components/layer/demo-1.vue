@@ -1,13 +1,13 @@
 <template>
   <div>
-    <u-container>
-      <u-sider>sider</u-sider>
-      <u-container>
-        <u-header>header</u-header>
-        <u-content>content</u-content>
-        <u-footer>footer</u-footer>
-      </u-container>
-    </u-container>
+    <hai-container>
+      <hai-sider>sider</hai-sider>
+      <hai-container>
+        <hai-header>header</hai-header>
+        <hai-content>content</hai-content>
+        <hai-footer>footer</hai-footer>
+      </hai-container>
+    </hai-container>
   </div>
 </template>
 
@@ -20,11 +20,11 @@
 
   export default {
     components: {
-      'u-container': Container,
-      'u-sider': Sider,
-      'u-header': Header,
-      'u-content': Content,
-      'u-footer': Footer
+      'hai-container': Container,
+      'hai-sider': Sider,
+      'hai-header': Header,
+      'hai-content': Content,
+      'hai-footer': Footer
     }
   }
 </script>

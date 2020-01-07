@@ -13,15 +13,15 @@ describe('Row', () => {
     expect(Col).to.exist
   })
   it('接收 gutter 属性.', (done) => {
-    Vue.component('u-row', Row)
-    Vue.component('u-col', Col)
+    Vue.component('hai-row', Row)
+    Vue.component('hai-col', Col)
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-row gutter="20">
-        <u-col span="12"></u-col>
-        <u-col span="12"></u-col>
-      </u-row>
+      <hai-row gutter="20">
+        <hai-col span="12"></hai-col>
+        <hai-col span="12"></hai-col>
+      </hai-row>
     `
     const vm = new Vue({
       el: div

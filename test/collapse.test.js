@@ -5,8 +5,8 @@ import Vue from 'vue'
 import Collapse from '../src/collapse.vue'
 import CollapseItem from '../src/collapse-item.vue'
 
-Vue.component('u-collapse', Collapse)
-Vue.component('u-collapse-item', CollapseItem)
+Vue.component('hai-collapse', Collapse)
+Vue.component('hai-collapse-item', CollapseItem)
 
 Vue.config.productionTip = false
 Vue.config.devtools = false
@@ -21,11 +21,11 @@ describe('Collapse', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-collapse>
-        <u-collapse-item title="标题1" name="1">内容1</u-collapse-item>
-        <u-collapse-item title="标题2" name="2">内容2</u-collapse-item>
-        <u-collapse-item title="标题3" name="3">内容3</u-collapse-item>
-      </u-collapse>
+      <hai-collapse>
+        <hai-collapse-item title="标题1" name="1">内容1</hai-collapse-item>
+        <hai-collapse-item title="标题2" name="2">内容2</hai-collapse-item>
+        <hai-collapse-item title="标题3" name="3">内容3</hai-collapse-item>
+      </hai-collapse>
     `
     const vm = new Vue({
       el: div
@@ -48,11 +48,11 @@ describe('Collapse', () => {
     const div = document.createElement('div')
     document.body.appendChild(div)
     div.innerHTML = `
-      <u-collapse :selected="['1', '2']">
-        <u-collapse-item title="标题1" name="1">内容1</u-collapse-item>
-        <u-collapse-item title="标题2" name="2">内容2</u-collapse-item>
-        <u-collapse-item title="标题3" name="3">内容3</u-collapse-item>
-      </u-collapse>
+      <hai-collapse :selected="['1', '2']">
+        <hai-collapse-item title="标题1" name="1">内容1</hai-collapse-item>
+        <hai-collapse-item title="标题2" name="2">内容2</hai-collapse-item>
+        <hai-collapse-item title="标题3" name="3">内容3</hai-collapse-item>
+      </hai-collapse>
     `
     const vm = new Vue({
       el: div
