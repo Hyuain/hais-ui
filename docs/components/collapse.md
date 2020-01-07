@@ -5,9 +5,9 @@ sidebarDepth: 2
 
 # 折叠面板
 
-## 简单实例
+## 简单示例
 
-<br>
+`collapse` 包括 `collapse` 和 `collapse-item` 两部分，以下是一个简单的示例，默认选中了第一个和第三个标签
 
 <ClientOnly>
 <collapse-demo-1></collapse-demo-1>
@@ -21,7 +21,8 @@ sidebarDepth: 2
 </hai-collapse>
 ```
 
-`collapse` 由 `collapse` 和 `collapse-item` 两部分组成，包含基础属性 `selected` `title` `name`。
+
+
 
 ## title
 <font color=#ff6464>必须</font>
@@ -30,13 +31,16 @@ sidebarDepth: 2
 
 - 默认值：`undefined`
 
-- 用法：
+- 用法示例：
 
 ```html
 <hai-collapse-item title="标题1" name="1">这里是第1段内容</hai-collapse-item>
 ```
 
 用于设置 `collapse` 的每一项的标题中的值。
+
+
+
 
 ## name
 <font color=#ff6464>必须</font>
@@ -45,13 +49,15 @@ sidebarDepth: 2
 
 - 默认值：`undefined`
 
-- 用法：
+- 用法示例：
 
 ```html
 <hai-collapse-item title="标题1" name="1">这里是第1段内容</hai-collapse-item>
 ```
 
+:::warning 注意
 每一项都必须有一个 `name` 属性，否则将会引起错误。
+:::
 
 ## selected
 <font color=#56a7ac>可选</font>
@@ -60,7 +66,7 @@ sidebarDepth: 2
 
 - 默认值：`[]`
 
-- 用法：
+- 用法示例：
 
 ```html
 <hai-collapse :selected="['name1','name3']">
@@ -72,7 +78,7 @@ sidebarDepth: 2
 
 `selected` 属性需要传入一个数组，这个数组包含了默认展开项的 `name`，默认为空数组，即均不展开。
 
-`selected` 属性也支持 `.sync` 语法，示例如下：
+`selected` 属性也支持 `.sync` 语法，可以通过变量动态拿到已展开项实时的 `name`，示例如下：
 
 <ClientOnly>
 <collapse-demo-2></collapse-demo-2>
@@ -87,6 +93,9 @@ sidebarDepth: 2
 
 selectedItem: {{selectedItem}}
 ```
+
+
+
 
 ## alone
 <font color=#56a7ac>可选</font>

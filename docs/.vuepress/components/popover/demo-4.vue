@@ -1,49 +1,36 @@
 <template>
   <div class="demo-wrapper">
-    <u-popover position="bottom">
-      <template v-slot:content="{close}">
+    <u-popover>
+      <template v-slot:content>
         <div>这是气泡卡片的内容</div>
-        <div class="button-wrapper">
-          <hai-button @click="close" class="button">点击关闭</hai-button>
-        </div>
       </template>
-      <hai-button>手动关闭标签示例</hai-button>
+      <hai-button>点击弹出 Popover</hai-button>
     </u-popover>
   </div>
 </template>
 
 <script>
-
   import Popover from "../../../../src/popover"
   import Button from "../../../../src/button"
-
   export default {
     components: {
       'u-popover': Popover,
       'hai-button': Button
     }
   }
-
 </script>
 
-<style lang="scss" scoped>
-  .button-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    > .button {
-      margin-top: 10px;
-    }
-  }
+<style scoped>
   @media (max-width: 419px) {
     .demo-wrapper {
       margin: 0.85rem -1.5rem;
       border-radius: 0
     }
   }
+
   .demo-wrapper {
     background: rgba(234, 236, 239, 0.5);
     border-radius: 6px;
     padding: 10px;
   }
-
 </style>

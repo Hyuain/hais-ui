@@ -5,14 +5,28 @@ sidebarDepth: 2
 
 # 气泡卡片
 
-## position
-<font color=#56a7ac>可选</font>
+## 简单示例
 
-<br>
+`popover` 组件由 `popover` 和 `popover-items` 二者构成，可以通过下面的这个简单示例了解他的基本用法。
 
 <ClientOnly>
-<popover-demo-1></popover-demo-1>
+<popover-demo-4></popover-demo-4>
 </ClientOnly>
+
+```html
+<u-popover>
+  <template v-slot:content>
+    <div>这是气泡卡片的内容</div>
+  </template>
+  <hai-button>点击弹出 Popover</hai-button>
+</u-popover>
+```
+
+
+
+
+## position
+<font color=#56a7ac>可选</font>
 
 - 类型：`String`
 
@@ -20,7 +34,11 @@ sidebarDepth: 2
 
 - 可接受值：`bottom` `top` `left` `right`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<popover-demo-1></popover-demo-1>
+</ClientOnly>
 
 ```html
 <u-popover position="bottom">
@@ -70,14 +88,11 @@ sidebarDepth: 2
 <popover-demo-2></popover-demo-2>
 </ClientOnly>
 
+
+
+
 ## trigger
 <font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<popover-demo-3></popover-demo-3>
-</ClientOnly>
 
 - 类型：`String`
 
@@ -85,7 +100,11 @@ sidebarDepth: 2
 
 - 可接受值： `click` `hover`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<popover-demo-3></popover-demo-3>
+</ClientOnly>
 
 ```html
 <u-popover>
