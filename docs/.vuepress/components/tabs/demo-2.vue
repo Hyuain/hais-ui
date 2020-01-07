@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-wrapper">
     <hai-tabs :selected.sync="selectedTab">
 
       <hai-tabs-head>
@@ -51,6 +51,17 @@
 </script>
 
 <style scoped>
+  @media(max-width: 419px){
+    .demo-wrapper{
+      margin: 0.85rem -1.5rem;
+      border-radius: 0
+    }
+  }
+  .demo-wrapper{
+    background: rgba(234, 236, 239, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+  }
   .demo-monitor{
     padding: 15px;
     color: #56a7ac;
