@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-wrapper">
     <hai-button @click="showToast">弹出信息</hai-button>
   </div>
 </template>
@@ -11,7 +11,7 @@
   Vue.use(plugin)
   export default {
     components: {
-      'hai-button': Button
+      'hai-button': Button,
     },
     methods: {
       showToast() {
@@ -19,5 +19,18 @@
       }
     }
   }
-
 </script>
+
+<style scoped>
+  @media(max-width: 419px){
+    .demo-wrapper{
+      margin: 0.85rem -1.5rem;
+      border-radius: 0
+    }
+  }
+  .demo-wrapper{
+    background: rgba(234, 236, 239, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+  }
+</style>

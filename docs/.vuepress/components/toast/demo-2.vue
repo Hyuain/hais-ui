@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-wrapper">
     <hai-button @click="showToast1">String</hai-button>
     <hai-button @click="showToast2">Html</hai-button>
   </div>
@@ -25,5 +25,18 @@
       }
     }
   }
-
 </script>
+
+<style scoped>
+  @media(max-width: 419px){
+    .demo-wrapper{
+      margin: 0.85rem -1.5rem;
+      border-radius: 0
+    }
+  }
+  .demo-wrapper{
+    background: rgba(234, 236, 239, 0.5);
+    border-radius: 6px;
+    padding: 10px;
+  }
+</style>

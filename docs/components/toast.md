@@ -7,13 +7,13 @@ sidebarDepth: 2
 
 ## 简单示例
 
-<br>
+您可以在需要的地方编写函数来调用 `toast` 组件，比如在点击按钮时触发。
 
 <ClientOnly>
 <toast-demo-1></toast-demo-1>
 </ClientOnly>
 
-`toast` 组件是以插件的形式提供的，您需要在 `JavaScript` 文件中加入以下内容来使用插件：
+`toast` 组件是以插件的形式提供的，您需要先在 `JavaScript` 文件中加入以下内容：
 
 ```js
 Vue.use(plugin)
@@ -37,7 +37,7 @@ new Vue({
 
 ## this.$toast()
 
-可以通过 `this.$toast()` 方法来使用 `toast` 组件，他接受两个参数：`message` 和 `options`，下面会介绍这两个参数的具体内容。
+就像上面的示例一样，您可以通过 `this.$toast()` 方法来使用 `toast` 组件，他接受两个参数：`message` 和 `options`，下面会介绍这两个参数的具体内容。
 
 ## message
 <font color=#ff6464>必须</font>
@@ -46,7 +46,7 @@ new Vue({
 
 - 默认值：`undefined`
 
-- 用法：
+- 用法示例：
 
 <ClientOnly>
 <toast-demo-2></toast-demo-2>
@@ -62,6 +62,8 @@ showToast2() {
   })
 }
 ```
+
+可以在 `message` 中传入想要在 `toast` 中显示的内容
 
 ::: warning 注意
 如果想要在 `message` 中使用 `Html` 内容，需要先开启 `enableHtml` 选项。

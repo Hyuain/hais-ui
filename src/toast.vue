@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" :class="toastClass">
     <div class="toast" ref="toast">
-      <div class="message">
+      <div class="message" ref="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="message"></div>
       </div>
@@ -43,16 +43,23 @@
       }
     },
     mounted() {
-      if (this.closeButton) {
-        this.updateStyles()
-      }
+      this.closeButton ? this.updateButtonStyles() : this.updateMessageStyles()
       this.execAutoClose()
     },
     methods: {
-      updateStyles() {
+      updateMessageStyles() {
+        if (document.body.clientWidth <= '576') {
+          this.$refs.toast.style.justifyContent = 'center'
+        }
+      },
+      updateButtonStyles() {
         this.$nextTick(() => {
-          this.$refs.line.style.height =
-            this.$refs.toast.getBoundingClientRect().height + 'px'
+          if (this.position === 'middle' && document.body.clientWidth <= '576') {
+            this.$refs.line.style.height = 0
+          } else {
+            this.$refs.line.style.height =
+              this.$refs.toast.getBoundingClientRect().height + 'px'
+          }
         })
       },
       execAutoClose() {
@@ -79,10 +86,11 @@
 
 <style lang="scss" scoped>
   $toast-border-radius: 12px;
-  $toast-bg: rgba(21, 23, 29, 0.75);
+  $toast-bg: rgba(21, 23, 29, 0.85);
   $toast-min-height: 40px;
   $animation-duration: .3s;
   $font-size: 14px;
+  $line-color: rgba(102, 102, 102, 0.8);
   @keyframes slide-up {
     0% {opacity: 0; transform: translateY(100%);}
     100% {opacity: 1; transform: translateY(0%);}
@@ -94,6 +102,49 @@
   @keyframes fade-in {
     0% {opacity: 0;}
     100% {opacity: 1;}
+  }
+  @media(max-width: 576px) {
+    .wrapper {
+      width: 100%;
+      .toast {
+        border-radius: 6px;
+        .line {
+          margin-left: auto;
+        }
+      }
+      &.position-top {
+        .toast {
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+        }
+      }
+      &.position-bottom {
+        .toast {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+      &.position-middle {
+        width: 60%;
+        .toast {
+          border-radius: 16px;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          .line {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid $line-color;
+          }
+          .close {
+            padding: 4px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
   .wrapper {
     position: fixed;
@@ -137,7 +188,7 @@
     padding: 0 16px;
     .line {
       height: 100%;
-      border-left: 1px solid #666;
+      border-left: 1px solid $line-color;
       margin-left: 16px;
     }
     .close {
