@@ -29,10 +29,16 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .container {
     height: 200px;
     color: #fff;
+    font-size: 1.3em;
+  }
+  .sider, .content, .footer, .header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .sider {
     width: 20%;
@@ -44,5 +50,6 @@
   }
   .header, .footer{
     background-color: #56a7ac;
+    height: 50px;
   }
 </style>

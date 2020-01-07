@@ -5,20 +5,36 @@ sidebarDepth: 2
 
 # 网格系统
 
-## auto
-<font color=#56a7ac>可选</font>
+## 简单示例
 
-<br>
+网格系统主要由 `row` `col` 这两个组件组成，每个 `row` 包裹多个 `col`，形成每一排的布局。
 
 <ClientOnly>
-<grid-demo-1></grid-demo-1>
+<grid-demo-6></grid-demo-6>
 </ClientOnly>
+
+```html
+<hai-row id="container" auto>
+  <hai-col id="item1"></hai-col>
+  <hai-col id="item2"></hai-col>
+  <hai-col id="item3"></hai-col>
+  <hai-col id="item4"></hai-col>
+</hai-row>
+```
+
+
+## auto
+<font color=#56a7ac>可选</font>
 
 - 类型：`Boolean`
 
 - 默认值：`false`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<grid-demo-1></grid-demo-1>
+</ClientOnly>
 
 ```html
 <hai-row id="container" auto>
@@ -33,16 +49,17 @@ sidebarDepth: 2
 }
 ```
 
-在 `row` 组件上的 `auto` 属性会将所有的 `col` 组件放在一排并平均占据宽度，注意这个时候需要为 `col` 加上宽度。
+在 `row` 组件上的 `auto` 属性会将所有的 `col` 组件放在一排并平均占据总跨度。
+
+:::warning
+使用 `auto` 时需要为 `col` 加上宽度，若没有加宽度，请使用 `span` 来指定跨度，否则宽度为 0。
+:::
+
+
+
 
 ## gutter
 <font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<grid-demo-4></grid-demo-4>
-</ClientOnly>
 
 - 类型：`String` `Number`
 
@@ -50,7 +67,11 @@ sidebarDepth: 2
 
 - 可接受值：`Number`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<grid-demo-4></grid-demo-4>
+</ClientOnly>
 
 ```html
 <hai-row id="container" auto gutter="20">
@@ -66,16 +87,13 @@ sidebarDepth: 2
 </hai-row>
 ```
 
-`gutter` 可以设置每个 `col` 内部元素之间的距离。
+`gutter` 可以设置每个 `col` 内部元素之间的距离，一般在 `auto` 的情况下使用。
+
+
+
 
 ## span
 <font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<grid-demo-2></grid-demo-2>
-</ClientOnly>
 
 - 类型：`String` `Number`
 
@@ -83,7 +101,11 @@ sidebarDepth: 2
 
 - 可接受值：`0` ~ `24`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<grid-demo-2></grid-demo-2>
+</ClientOnly>
 
 ```html
 <hai-row id="container">
@@ -93,16 +115,13 @@ sidebarDepth: 2
 </hai-row>
 ```
 
-可以用 `span` 为每个 `col` 手动分配占据的宽度比例，每排一共 `24` 份，若几个 `col` 的 `span` 之和超过 `24`，末尾的元素将会换行。
+可以用 `span` 为每个 `col` 手动分配占据总跨度比例，每排一共 `24` 份，若同一个 `row` 中的几个 `col` 的 `span` 之和超过 `24`，末尾的元素将会换行。
+
+
+
 
 ## offset
 <font color=#56a7ac>可选</font>
-
-<br>
-
-<ClientOnly>
-<grid-demo-3></grid-demo-3>
-</ClientOnly>
 
 - 类型：`String` `Number`
 
@@ -110,7 +129,11 @@ sidebarDepth: 2
 
 - 可接受值：`0` ~ `24`
 
-- 用法：
+- 用法示例：
+
+<ClientOnly>
+<grid-demo-3></grid-demo-3>
+</ClientOnly>
 
 ```html
 <hai-row id="container">
@@ -120,21 +143,24 @@ sidebarDepth: 2
 </hai-row>
 ```
 
-可以用 `offset` 为每个 `col` 设置距离其左边 `col` 的份数，若几个 `col` 的 `span` 和 `offset` 之和超过 `24`，末尾的元素将会换行。
+可以用 `offset` 为每个 `col` 设置距离其左边 `col` 的份数，若同一个 `row` 中的几个 `col` 的 `span` 和 `offset` 之和超过 `24`，末尾的元素将会换行。
+
+
+
 
 ## 响应式布局
 
 布局组件支持响应式布局，内置 5 种宽度范围，当没有写对应范围的样式时，将默认向下取值。
 
-|  属性  |  宽度  |
-|  :----:   | :----:  |
-|  默认  |  0px ~ 576px  |
-|  pad  |  577px ~ 768px |
-|  narrow-pc  |  769px ~ 992px |
-|  pc  |  993px ~ 1200px |
-|  wide-pc  |  ≥ 1201px  |
+|     属性      |      宽度      |
+|    :----:    |    :----:      |
+|      默认     |   0px ~ 576px  |
+|     pad      |  577px ~ 768px |
+|   narrow-pc  |  769px ~ 992px |
+|      pc      |  993px ~ 1200px |
+|    wide-pc   |    ≥ 1201px    |
 
-- 示例：
+- 示例用法：
 
 <ClientOnly>
 <grid-demo-5></grid-demo-5>

@@ -24,19 +24,26 @@ sidebarDepth: 2
 </hai-container>
 ```
 ```css
-  .container {
-    height: 200px;
-    color: #fff;
-  }
-  .sider {
-    width: 20%;
-    background-color: #71c9ce;
-  }
-  .content{
-    background-color: #cbf1f5;
-    color:  #71c9ce;
-  }
-  .header, .footer{
-    background-color: #56a7ac;
-  }
+.container {
+  height: 200px;
+  color: #fff;
+  font-size: 1.3em;
+}
+.sider, .content, .footer, .header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sider {
+  width: 20%;
+  background-color: #71c9ce;
+}
+.content{
+  background-color: #cbf1f5;
+  color:  #71c9ce;
+}
+.header, .footer{
+  background-color: #56a7ac;
+  height: 50px;
+}
 ```
