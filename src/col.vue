@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  let validator = (value) => {
+  const validator = (value) => {
     let keys = Object.keys(value)
     let valid = true
     keys.forEach(key => {

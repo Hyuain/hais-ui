@@ -57,10 +57,10 @@
   $color-disabled: #aaaaaa;
   $text-color-accent: #56a7ac;
   .tabs-item {
+    cursor: pointer;
     &.direction-horizontal {
       flex-shrink: 0;
       padding: 0 1.5em;
-      cursor: pointer;
       display: flex;
       align-items: center;
       height: 100%;

@@ -54,6 +54,7 @@
     vertical-align: middle;
     > :not(:last-child) {margin-right: .5em;}
     > input {
+      transition: all .2s;
       height: $input-height - 2px;padding: 0 8px;font-size: inherit;color: $text-color;
       border: 1px solid $border-color;border-radius: $border-radius;
       &:hover {border-color: $border-color-hover;}

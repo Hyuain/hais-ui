@@ -43,7 +43,6 @@ Vue.component('hai-collapse', Collapse)
 Vue.component('hai-collapse-item', CollapseItem)
 
 
-
 new Vue({
   data: {
     loading1: false,
@@ -53,18 +52,20 @@ new Vue({
     selectedTab: ['3'],
   },
   methods: {
-    showToast1(){
+    showToast1() {
       this.showToast('top')
     },
-    showToast2(){
+    showToast2() {
       this.showToast('middle')
     },
-    showToast3(){
+    showToast3() {
       this.showToast('bottom')
     },
-
+    focus2(e) {
+      console.log(e)
+    },
     showToast(position) {
-      this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random()*100)}`,
+      this.$toast(`当前功能不稳定，如果遇到 Bug 请关闭该功能，${parseInt(Math.random() * 100)}`,
         {
           autoClose: false,
           position,

@@ -32,13 +32,13 @@
 
 <div id="app" style="padding: 100px;">
 
-  <hai-collapse :selected.sync="selectedTab">
-    <hai-collapse-item title="标题1" name="1">内容1</hai-collapse-item>
-    <hai-collapse-item title="标题2" name="2">内容2</hai-collapse-item>
-    <hai-collapse-item title="标题3" name="3">内容3</hai-collapse-item>
-  </hai-collapse>
+<!--  <hai-collapse :selected.sync="selectedTab">-->
+<!--    <hai-collapse-item title="标题1" name="1">内容1</hai-collapse-item>-->
+<!--    <hai-collapse-item title="标题2" name="2">内容2</hai-collapse-item>-->
+<!--    <hai-collapse-item title="标题3" name="3">内容3</hai-collapse-item>-->
+<!--  </hai-collapse>-->
 
-  {{selectedTab}}
+<!--  {{selectedTab}}-->
 <!--    <hai-popover position="bottom">-->
 <!--      <template v-slot:content="methods">-->
 <!--        <div>这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容这是显示的内容</div>-->
@@ -98,42 +98,42 @@
 <!--      <hai-button>按钮</hai-button>-->
 <!--    </hai-popover>-->
 
-<!--  <hai-tabs selected="sports">-->
-<!--    <hai-tabs-head>-->
-<!--      <template slot="actions">-->
-<!--        <button>设置</button>-->
-<!--      </template>-->
-<!--      <hai-tabs-item name="anime">-->
-<!--        <hai-icon name="settings"></hai-icon> 动漫-->
-<!--      </hai-tabs-item>-->
-<!--      <hai-tabs-item name="finance" disabled>财经</hai-tabs-item>-->
-<!--      <hai-tabs-item name="sports">体育</hai-tabs-item>-->
-<!--    </hai-tabs-head>-->
-<!--    <hai-tabs-body>-->
-<!--      <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>-->
-<!--      <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>-->
-<!--      <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>-->
-<!--    </hai-tabs-body>-->
-<!--  </hai-tabs>-->
-<!--<div style="margin: 100px;">-->
-<!--  <hai-tabs selected="anime" direction="vertical">-->
-<!--    <hai-tabs-head>-->
-<!--      <template slot="actions">-->
-<!--        <button>设置</button>-->
-<!--      </template>-->
-<!--      <hai-tabs-item name="anime">-->
-<!--        <hai-icon name="settings"></hai-icon> 动漫-->
-<!--      </hai-tabs-item>-->
-<!--      <hai-tabs-item name="finance" disabled>财经</hai-tabs-item>-->
-<!--      <hai-tabs-item name="sports">体育</hai-tabs-item>-->
-<!--    </hai-tabs-head>-->
-<!--    <hai-tabs-body>-->
-<!--      <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>-->
-<!--      <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>-->
-<!--      <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>-->
-<!--    </hai-tabs-body>-->
-<!--  </hai-tabs>-->
-<!--</div>-->
+  <hai-tabs selected="sports">
+    <hai-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
+      <hai-tabs-item name="anime">
+        <hai-icon name="settings"></hai-icon> 动漫
+      </hai-tabs-item>
+      <hai-tabs-item name="finance" disabled>财经</hai-tabs-item>
+      <hai-tabs-item name="sports">体育</hai-tabs-item>
+    </hai-tabs-head>
+    <hai-tabs-body>
+      <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+      <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+      <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+    </hai-tabs-body>
+  </hai-tabs>
+<div style="margin: 100px;">
+  <hai-tabs selected="anime" direction="vertical">
+    <hai-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
+      <hai-tabs-item name="anime">
+        <hai-icon name="settings"></hai-icon> 动漫
+      </hai-tabs-item>
+      <hai-tabs-item name="finance" disabled>财经</hai-tabs-item>
+      <hai-tabs-item name="sports">体育</hai-tabs-item>
+    </hai-tabs-head>
+    <hai-tabs-body>
+      <hai-tabs-pane name="anime">动漫相关资讯</hai-tabs-pane>
+      <hai-tabs-pane name="finance">财经相关资讯</hai-tabs-pane>
+      <hai-tabs-pane name="sports">体育相关资讯</hai-tabs-pane>
+    </hai-tabs-body>
+  </hai-tabs>
+</div>
 
 
 <!--    <button @click="showToast1">top</button>-->
@@ -171,63 +171,63 @@
 <!--      </hai-row>-->
 
 
-  <hai-row id="container" auto>
-    <hai-col id="box1"></hai-col>
-    <hai-col id="box2"></hai-col>
-    <hai-col id="box3"></hai-col>
-  </hai-row>
+<!--  <hai-row id="container" auto>-->
+<!--    <hai-col id="box1"></hai-col>-->
+<!--    <hai-col id="box2"></hai-col>-->
+<!--    <hai-col id="box3"></hai-col>-->
+<!--  </hai-row>-->
 
 
 
-      <hai-row>
-        <hai-col span="2"></hai-col>
-        <hai-col span="22"></hai-col>
-      </hai-row>
+<!--      <hai-row>-->
+<!--        <hai-col span="2"></hai-col>-->
+<!--        <hai-col span="22"></hai-col>-->
+<!--      </hai-row>-->
 
 
-      <hai-row class="logo-and-search-and-qrcode">
-        <hai-col class="demoBox" span="4">
-          <div class="logo-wrapper">
-            <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">
-          </div>
-        </hai-col>
-        <hai-col class="demoBox" span="14"></hai-col>
-        <hai-col class="demoBox" span="6"></hai-col>
-      </hai-row>
+<!--      <hai-row class="logo-and-search-and-qrcode">-->
+<!--        <hai-col class="demoBox" span="4">-->
+<!--          <div class="logo-wrapper">-->
+<!--            <img class="logo" src="http://img.alicdn.com/tfs/TB1_uT8a5ERMeJjSspiXXbZLFXa-143-59.png" alt="">-->
+<!--          </div>-->
+<!--        </hai-col>-->
+<!--        <hai-col class="demoBox" span="14"></hai-col>-->
+<!--        <hai-col class="demoBox" span="6"></hai-col>-->
+<!--      </hai-row>-->
 
 
-    <div class="box">
-      <hai-input v-model="message"></hai-input>
-      <p>{{message}}</p>
-      <button @click="message+=1">+1</button>
-      <hai-input value="啧啧啧" disabled></hai-input>
-      <hai-input value="啧啧啧" readonly></hai-input>
-    </div>
+<!--    <div class="box">-->
+<!--      <hai-input v-model="message"></hai-input>-->
+<!--      <p>{{message}}</p>-->
+<!--      <button @click="message+=1">+1</button>-->
+<!--      <hai-input value="啧啧啧" disabled></hai-input>-->
+<!--      <hai-input value="啧啧啧" readonly></hai-input>-->
+<!--    </div>-->
 
-    <div class="box">
-      <hai-input value="啧" error="姓名不能少于两个字"></hai-input>
-    </div>
-    <div class="box">
-      <hai-input value="啧" @change="inputChange"></hai-input>
-    </div>
+<!--    <div class="box">-->
+<!--      <hai-input value="啧" error="姓名不能少于两个字"></hai-input>-->
+<!--    </div>-->
+<!--    <div class="box">-->
+<!--      <hai-input value="啧"  @focus="this.focus2"></hai-input>-->
+<!--    </div>-->
 
 <!--    <div class="box">-->
 
-      <hai-button :loading="loading1" @click="loading1 = !loading1">
-        按钮
-      </hai-button>
-      <hai-button icon="settings" :loading="loading2" @click="loading2 = !loading2">
-      </hai-button>
-      <hai-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-        按钮
-      </hai-button>
-      <hai-icon name="download"></hai-icon>
+<!--      <hai-button :loading="loading1" @click="loading1 = !loading1">-->
+<!--        按钮-->
+<!--      </hai-button>-->
+<!--      <hai-button icon="settings" :loading="loading2" @click="loading2 = !loading2">-->
+<!--      </hai-button>-->
+<!--      <hai-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">-->
+<!--        按钮-->
+<!--      </hai-button>-->
+<!--      <hai-icon name="download"></hai-icon>-->
 
-      <hai-button-group>
-        <hai-button icon="left">上一页</hai-button>
-        <hai-button>上一页</hai-button>
-        <hai-button icon="right" icon-position="right">下一页</hai-button>
-      </hai-button-group>
+<!--      <hai-button-group>-->
+<!--        <hai-button icon="left">上一页</hai-button>-->
+<!--        <hai-button>上一页</hai-button>-->
+<!--        <hai-button icon="right" icon-position="right">下一页</hai-button>-->
+<!--      </hai-button-group>-->
 
 </div>
 

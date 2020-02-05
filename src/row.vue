@@ -7,8 +7,8 @@
 <script>
   export default {
     name: "HaiRow",
-    props:{
-      gutter:{
+    props: {
+      gutter: {
         type: [Number, String]
       },
       align: {
@@ -22,20 +22,19 @@
         default: false
       }
     },
-    computed:{
-      rowStyle(){
-        return{
-          marginLeft: -this.gutter/2+'px',
-          marginRight: -this.gutter/2+'px'
+    computed: {
+      rowStyle() {
+        return {
+          marginLeft: -this.gutter / 2 + 'px',
+          marginRight: -this.gutter / 2 + 'px'
         }
       },
-      rowClass(){
-        let {align, auto} =this
+      rowClass() {
+        let {align, auto} = this
         return {
-          [`align-${align}`]:align,
-          'auto':auto
+          [`align-${align}`]: align,
+          'auto': auto
         }
-
       }
     },
     mounted() {
@@ -47,19 +46,19 @@
 </script>
 
 <style lang="scss" scoped>
-  .row{
+  .row {
     display: flex;
     flex-wrap: wrap;
-    &.auto{
+    &.auto {
       flex-wrap: nowrap;
     }
-    &.align-left{
+    &.align-left {
       justify-content: flex-start;
     }
-    &.align-right{
+    &.align-right {
       justify-content: flex-end;
     }
-    &.align-center{
+    &.align-center {
       justify-content: center;
     }
   }

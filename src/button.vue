@@ -2,9 +2,9 @@
   <button class="button" :class="{[`icon-${iconPosition}`]: true}" @click="$emit('click')">
     <hai-icon class="icon" v-if="icon && !loading" :name="icon"></hai-icon>
     <hai-icon class="icon loading" name="loading" v-if="loading"></hai-icon>
-    <div class="content">
+    <span class="content">
       <slot></slot>
-    </div>
+    </span>
   </button>
 </template>
 
