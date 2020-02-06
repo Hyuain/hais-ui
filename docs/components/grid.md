@@ -1,5 +1,5 @@
 ---
-title: 网格系统 - grid
+title: 网格系统 - Grid
 sidebarDepth: 2
 ---
 
@@ -19,6 +19,7 @@ sidebarDepth: 2
   <hai-col id="item2"></hai-col>
   <hai-col id="item3"></hai-col>
   <hai-col id="item4"></hai-col>
+  <hai-col id="item5"></hai-col>
 </hai-row>
 ```
 

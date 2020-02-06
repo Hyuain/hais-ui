@@ -11,8 +11,6 @@ title: 快速上手
 *::before,*::after{ box-sizing: border-box; }
 ```
 
-您可以在 `hais-ui/src` 文件夹中查看组件的源代码，并修改自己喜欢的样式。
-
 您可以在 HTML 文件或 Vue 的 `template` 中直接使用组件，比如：
 
 ```html
@@ -23,7 +21,6 @@ title: 快速上手
       <hai-button @click="showToast">小按钮</hai-button>
       <hai-button @click="showToast">小按钮</hai-button>
     </hai-button-group>
-    <hai-tabs>
     <hai-popover>
       <template v-slot:content>
         <div>这是气泡卡片的内容</div>
@@ -34,14 +31,27 @@ title: 快速上手
 </template>
 
 <script>
-export default {
-  name: 'app',
-  methods: {
-    showToast() {
-      this.$toast('弹出小窗口咯')    
-    }   
+  export default {
+    name: 'app',
+    methods: {
+      showToast() {
+        this.$toast('弹出小窗口咯')
+      }
+    }
   }
-}
 </script>
+
+<style>
+  * { box-sizing: border-box; }
+  *::before, *::after { box-sizing: border-box; }
+
+  #app {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
 ```
 
+您可以在 `hais-ui/src` 文件夹中查看组件的源代码，并修改自己喜欢的样式。

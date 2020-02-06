@@ -1,5 +1,5 @@
 ---
-title: 按钮 - button
+title: 按钮 - Button
 sidebarDepth: 2
 ---
 

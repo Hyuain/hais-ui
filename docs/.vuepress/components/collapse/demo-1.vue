@@ -11,6 +11,7 @@
 <script>
   import Collapse from "../../../../src/collapse"
   import CollapseItem from "../../../../src/collapse-item"
+
   export default {
     components: {
       'hai-collapse': Collapse,
@@ -19,7 +20,7 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   @media (max-width: 419px) {
     .demo-wrapper {
       margin: 0.85rem -1.5rem;

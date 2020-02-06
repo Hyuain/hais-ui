@@ -1,5 +1,5 @@
 ---
-title: 默认布局 - layer
+title: 默认布局 - Layout
 sidebarDepth: 2
 ---
 

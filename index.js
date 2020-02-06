@@ -1,4 +1,3 @@
-import Vue from 'vue'
 import HaiButton from './src/button'
 import HaiButtonGroup from './src/button-group'
 import HaiIcon from './src/icon'
@@ -10,7 +9,7 @@ import HaiHeader from './src/header'
 import HaiContent from './src/content'
 import HaiSider from './src/sider'
 import HaiFooter from './src/footer'
-import HaiPlugin from "./src/plugin"
+import HaiToast from "./src/plugin"
 import HaiTabs from './src/tabs'
 import HaiTabsHead from './src/tabs-head'
 import HaiTabsBody from './src/tabs-body'
@@ -48,7 +47,30 @@ const install = function (Vue, options = {}) {
     Vue.component(key, components[key]);
   });
 
-  Vue.use(HaiPlugin)
+  Vue.use(HaiToast)
 }
 
 export default install
+
+export {
+  HaiButton,
+  HaiButtonGroup,
+  HaiIcon,
+  HaiInput,
+  HaiCol,
+  HaiRow,
+  HaiContainer,
+  HaiHeader,
+  HaiContent,
+  HaiSider,
+  HaiFooter,
+  HaiTabs,
+  HaiTabsHead,
+  HaiTabsBody,
+  HaiTabsItem,
+  HaiTabsPane,
+  HaiPopover,
+  HaiCollapse,
+  HaiCollapseItem,
+  HaiToast
+}

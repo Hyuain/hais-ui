@@ -5,8 +5,8 @@ module.exports = {
   themeConfig: {
     nav: [
       {text: '主页', link: '/'},
-      {text: 'Guide', link: '/guide/'},
-      {text: 'External', link: 'https://google.com'},
+      {text: '博客', link: 'https://hais-teatime.com/post/2020-01-27-hais-ui'},
+      {text: 'GitHub', link: 'https://github.com/Hyuain/hais-ui'},
     ],
     sidebar: [
       {
@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         title: '组件',
-        children: ['/components/button', '/components/input', '/components/grid', '/components/layer', '/components/toast', '/components/tabs', '/components/popover', '/components/collapse']
+        children: ['/components/button', '/components/input', '/components/grid', '/components/layout', '/components/toast', '/components/tabs', '/components/popover', '/components/collapse']
       },
     ]
   }

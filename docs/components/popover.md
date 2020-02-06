@@ -1,5 +1,5 @@
 ---
-title: 气泡卡片 - popover
+title: 气泡卡片 - Popover
 sidebarDepth: 2
 ---
 

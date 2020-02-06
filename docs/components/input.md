@@ -1,5 +1,5 @@
 ---
-title: 输入框 - input
+title: 输入框 - Input
 sidebarDepth: 2
 ---
 
