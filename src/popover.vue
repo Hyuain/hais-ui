@@ -122,7 +122,7 @@
       },
       onClickDocument(event) {
         const needClose =
-          (!this.$refs.contentWrapper || !this.$refs.contentWrapper.contains(event.target)) &&
+          (this.$refs.contentWrapper && !this.$refs.contentWrapper.contains(event.target)) &&
           (!this.$refs.popover.contains(event.target)) &&
           (this.$refs.popover !== event.target)
         if (needClose) {

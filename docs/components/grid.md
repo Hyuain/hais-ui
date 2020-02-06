@@ -51,7 +51,7 @@ sidebarDepth: 2
 
 在 `row` 组件上的 `auto` 属性会将所有的 `col` 组件放在一排并平均占据总跨度。
 
-:::warning
+:::warning 注意
 使用 `auto` 时需要为 `col` 加上宽度，若没有加宽度，请使用 `span` 来指定跨度，否则宽度为 0。
 :::
 
