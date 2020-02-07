@@ -38,7 +38,7 @@ Vue.use(HaisUI)
 import 'hais-ui/dist/index.css'
 ```
 
-接下来，您就可以按需引入并注册了，需要注意的是，[弹出信息组件](/components/toast.html)的使用可能有些不同，因为他是以插件的方式提供的，详细内容请查阅相关章节。
+接下来，您就可以按需引入并注册了，需要注意的是，[弹出信息组件](/components/toast.html) 的使用可能有些不同，因为他是以插件的方式提供的，详细内容请查阅相关章节。
 
 ```js
 import {HaiButton, HaiPopover} from 'hais-ui'

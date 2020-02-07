@@ -5,7 +5,14 @@ sidebarDepth: 2
 
 # 弹出信息
 
+## 按需引入
 
+您需要这样使用 Toast 组件，因为他是以插件的形式提供的。当然，如果您已经全局自动注册了 Hais-UI，可以忽略这部分。
+
+```js
+import {HaiToast} from 'hais-ui'
+Vue.use(HaiToast)
+```
 
 ## 简单示例
 
